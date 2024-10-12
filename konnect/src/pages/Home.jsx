@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../assets/Home1.jpeg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -13,12 +13,12 @@ const Home = () => {
           <p className="">Find the entrepreneurial services nearest to you.</p>
         </div>
         <div className="m-2">
-          <Link
-            to="welcome"
+          <NavLink
+            to="/welcome"
             className="p-4 px-3  text-center bg-yellow rounded-lg hover:bg-purple-900"
           >
             GET STARTED
-          </Link>
+          </NavLink>
         </div>
       </div>
       <div className="h-1/5 overflow-hidden">

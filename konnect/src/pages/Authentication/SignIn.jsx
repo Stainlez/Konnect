@@ -24,19 +24,22 @@ const SignIn = () => {
         required
       />
         </div>
-
+        <p className="mt-4 text-left">
+      <Link to="/resetpassword" className="text-yellow hover:text-purple-400">Forgot Password?</Link>
+    </p>
     
     <button
       type="submit"
-      className="w-1/2 mt-16 ml-28 align-center font-semibold bg-yellow text-black py-2 rounded hover:bg-purple-400"
+      className="w-1/2 mt-16 ml-28 align-center font-semibold bg-yellow text-black py-3 rounded hover:bg-purple-400"
     >
       SIGN IN
     </button>
+   
   </form>
   
   <div className='flex space-x-2 text-textColor justify-center align-center'>
   <p className='bg-purpleBg'>DON&apos;T HAVE AN ACCOUNT? </p>
-  <Link to="/signup" className="bg-purpleBg font-semibold hover:text-purple-400">SIGN UP</Link>
+  <Link to="/signup" className="font-semibold text-yellow hover:text-purple-400">SIGN UP</Link>
   </div>
     
   </div>

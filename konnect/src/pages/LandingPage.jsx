@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import Bubu from "../assets/Bubu.jpg"
 import laptop from "../assets/laptop.png"
 import chat from "../assets/chat.png"
@@ -11,15 +12,23 @@ import four from "../assets/four.png"
 import rating from "../assets/Ratings.png"
 import out5 from "../assets/out5.png"
 
-const About = () => {
+const LandingPage = () => {
   return (
     <div className='bg-paleLavender max-w-full'>
       {/* Hero Section */}
         <div className='container flex flex-col bg-about-hero p-5 min-h-screen max-w-full bg-no-repeat bg-cover bg-center'>
             <div className='flex-col mt-24 space-y-5 max-w-2xl mx-auto'>
-              <p className='bg-yellow mx-auto p-2 text-center rounded-full w-20'>About</p>
+              {/* <p className='bg-yellow mx-auto p-2 text-center rounded-full w-20'>About</p> */}
               <p className='text-textColor pt-11 text-center text-2xl md:text-3xl lg:text-4xl font-bold'>Let&apos;s Unite. Let&apos;s Connect</p>
               <p className='text-textColor pt-5 text-center text-sm md:text-base lg:text-lg'>We are on a mission to build the best community for student entrepreneurs to share, grow and get hired by potential customers.</p>
+              <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 mb-8">
+                <Link
+                  to="welcome"
+                  className="p-4 px-3 text-center bg-yellow rounded-lg hover:bg-purple-900"
+                >
+                  GET STARTED
+                </Link>
+              </div>
             </div>
         </div>
             
@@ -191,4 +200,4 @@ Business has been booming as well.</p>
 
 }
 
-export default About
+export default LandingPage

@@ -30,7 +30,7 @@ const activeStyle = {
 
         {/* Menu Items (hidden on mobile) */}
         <div className="hidden m-auto text-gray-100 bg-purpleBg space-x-6 md:flex">
-          <NavLink to="/" 
+          <NavLink to="/home" 
           className="hover:text-yellow "
             style={({isActive}) => isActive ? activeStyles : null}>
             HOME
@@ -79,7 +79,7 @@ const activeStyle = {
             isOpen ? "flex" : "hidden"
           }`} // Toggle between 'flex' and 'hidden' classes based on state
         >
-        <NavLink to="/" 
+        <NavLink to="/home" 
         style={({isActive}) => isActive ? activeStyle : null}
         className="hover:text-darkGrayishBlue">
             HOME

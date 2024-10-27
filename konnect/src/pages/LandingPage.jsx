@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import Bubu from "../assets/Bubu.jpg"
+import jasmine from "../assets/Jasmine.jpg"
+import mabel from "../assets/Mabel.jpg"
 import laptop from "../assets/laptop.png"
 import chat from "../assets/chat.png"
 import rocket from "../assets/rocket.png"
@@ -21,14 +23,14 @@ const LandingPage = () => {
               {/* <p className='bg-yellow mx-auto p-2 text-center rounded-full w-20'>About</p> */}
               <p className='text-textColor pt-11 text-center text-2xl md:text-3xl lg:text-4xl font-bold'>Let&apos;s Unite. Let&apos;s Connect</p>
               <p className='text-textColor pt-5 text-center text-sm md:text-base lg:text-lg'>We are on a mission to build the best community for student entrepreneurs to share, grow and get hired by potential customers.</p>
-              <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 mb-8">
+              {/* <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 mb-8">
                 <Link
                   to="welcome"
                   className="p-4 px-3 text-center bg-yellow rounded-lg hover:bg-purple-900"
                 >
                   GET STARTED
                 </Link>
-              </div>
+              </div> */}
             </div>
         </div>
             
@@ -41,10 +43,10 @@ const LandingPage = () => {
             <div className="flex flex-col md:flex-row mt-10 gap-8 justify-center items-center">
               <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
               <div className='flex md:hidden justify-center items-center w-2/4'>
-                <img className='w-3/4 md:w-full rounded-[9px] mb-[9px]' src={Bubu} alt="Jasmine" />
+                <img className='w-3/4 object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={jasmine} alt="Jasmine" />
                 </div>
-                <div className='hidden md:flex justify-center items-center '>
-                  <img className='w-3/4 md:w-full rounded-[9px] mb-[9px]' src={Bubu} alt="Jasmine" />
+                <div className='hidden md:flex justify-center items-center'>
+                  <img className='object-cover w-full  rounded-[9px] mb-[9px] h-56 md:w-52' src={jasmine} alt="Jasmine" />
                   </div>
                   
                 <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Okechukwu-Elemba Onyinye</h2>
@@ -54,11 +56,11 @@ const LandingPage = () => {
               </div>
 
               <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
-              <div className='flex md:hidden justify-center items-center w-2/4'>
-                <img className='w-3/4 md:w-full rounded-[9px] mb-[9px]' src={Bubu} alt="Jasmine" />
+              <div className='flex md:hidden justify-center items-center w-2/4 h-2/4'>
+                <img className='w-3/4 md:w-full rounded-[9px] mb-[9px] h-56' src={Bubu} alt="Jasmine" />
                 </div>
                 <div className='hidden md:flex justify-center items-center '>
-                  <img className='w-3/4 md:w-full rounded-[9px] mb-[9px]' src={Bubu} alt="Jasmine" />
+                  <img className='w-3/4 rounded-[9px] mb-[9px] h-56 md:w-52' src={Bubu} alt="Jasmine" />
                   </div>
                 <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Ezeakalue Jude</h2>
                 <p className='mt-2 font-bold'>Frontend Developer</p>
@@ -67,10 +69,10 @@ const LandingPage = () => {
 
               <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
               <div className='flex md:hidden justify-center items-center w-2/4'>
-                <img className='w-3/4 md:w-full rounded-[9px] mb-[9px]' src={Bubu} alt="Jasmine" />
+                <img className='w-3/4 object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={mabel} alt="Jasmine" />
                 </div>
                 <div className='hidden md:flex justify-center items-center '>
-                  <img className='w-3/4 md:w-full rounded-[9px] mb-[9px]' src={Bubu} alt="Jasmine" />
+                  <img className='w-3/4 object-cover rounded-[9px] mb-[9px] h-56 md:w-52' src={mabel} alt="Jasmine" />
                   </div>
                 <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Ukoha Chidinma M.</h2>
                 <p className='mt-2 font-bold'>Backend Developer</p>

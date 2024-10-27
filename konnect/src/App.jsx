@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import LandingPage from "./pages/LandingPage"
+import About from "./pages/About"
 import Services from "./pages/Services"
 import Contact from "./pages/Contact"
 import Welcome from "./pages/Welcome"
@@ -25,7 +26,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<LandingPage />} />
         <Route path="home" element={<Home />} />
-        {/* <Route path="about" element={<About />} /> */}
+        <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="contact" element={<Contact />} />
         <Route path="welcome" element={<Welcome />} />

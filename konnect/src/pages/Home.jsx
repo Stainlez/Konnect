@@ -7,12 +7,12 @@ const Home = () => {
     <div className="bg-paleLavender">
       <div className="p-11 space-y-11">
         <div className="space-y-2">
-          <h1 className="text-black pt-8 max-w-md mt-16 text-5xl font-bold">
+          <h1 className="text-black pt-8 max-w-md mt-16 text-3xl font-bold md:text-5xl">
             LET&apos;S KONNECT
           </h1>
           <p className="">Find the entrepreneurial services nearest to you.</p>
         </div>
-        <div className="m-2">
+        <div className="mt-2">
           <NavLink
             to="/welcome"
             className="p-4 px-3  text-center bg-yellow rounded-lg hover:bg-purple-900"

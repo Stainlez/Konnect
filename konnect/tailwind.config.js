@@ -7,7 +7,7 @@ export default {
   theme: {
     screens: {
       sm: '480px',
-      md: '768px',
+      md: '850px',
       lg: '976px',
       xl: '1440px',
     },
@@ -18,7 +18,7 @@ export default {
         textBlack: 'hsla(220, 4%, 15%, 1)',
         lineColor: 'hsla(0, 6%, 29%, 1)',
         yellow: 'hsla(54, 91%, 48%, 1)',
-        purpleBg: 'hsla(288, 76%, 23%, 1)',
+        purpleBg: '#230E3D',
         formBg: 'hsla(0, 5%, 43%, 1)',
         brightRed: 'hsl(12, 88%, 59%)',
         brightRedLight: 'hsl(12, 88%, 69%)',
@@ -33,6 +33,7 @@ export default {
       backgroundImage: {
         'hero-pattern': "url('./src/assets/Capture1.PNG')",
         'about-hero': "url('./src/assets/aboutHero.png')",
+        'contact': "url('./src/assets/contact.png')",
       },
     },
   },

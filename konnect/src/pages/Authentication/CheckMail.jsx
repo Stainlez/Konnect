@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import MailSendEmail from "../../assets/mail-send-envelope.png";
 
 const CheckMail = () => {
@@ -17,7 +17,7 @@ const CheckMail = () => {
           Open email app
         </button>
         <button className="text-sm text-gray-600 hover:underline">
-          Skip, I'll confirm later
+          Skip, I&apos;ll confirm later
         </button>
         <p className="text-xs text-gray-500 mt-4">
           Did not receive an email? Check your spam filter or try another email address

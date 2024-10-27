@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// import React from "react";
+// import { Link } from "react-router-dom";
 import chatIcon from "../assets/chatIcon.png";
 import emailIcon from "../assets/emailIcon.png";
 import whatsappIcon from "../assets/whatsappIcon.png";

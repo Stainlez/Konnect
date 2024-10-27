@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from "react-router-dom"
-import { Form, redirect } from 'react-router-dom';
+import { useState } from 'react'
+import { Link } from "react-router-dom"
+// import { Form, redirect } from 'react-router-dom';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
-import contact from "../../assets/contact.png"
 import signimg from "../../assets/Signimg.png";
 
 

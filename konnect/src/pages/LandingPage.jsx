@@ -1,5 +1,5 @@
-import React from 'react'
-import {Link} from "react-router-dom"
+// import React from 'react'
+// import {Link} from "react-router-dom"
 import Bubu from "../assets/Bubu.jpg"
 import jasmine from "../assets/Jasmine.jpg"
 import mabel from "../assets/Mabel.jpg"

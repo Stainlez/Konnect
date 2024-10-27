@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 import LandingPage from "./pages/LandingPage"
 import About from "./pages/About"
@@ -13,7 +13,7 @@ import ResetPassword from "./pages/Authentication/ResetPassword"
 import CheckMail from "./pages/Authentication/CheckMail"
 import CreateNewPassword from "./pages/Authentication/CreateNewPassword"
 import Layout from "./components/Layout"
-import HostLayout from "./components/HostLayout"
+// import HostLayout from "./components/HostLayout"
 import './App.css'
 
 function App() {

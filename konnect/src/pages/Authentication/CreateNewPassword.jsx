@@ -72,7 +72,7 @@ const CreateNewPassword = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-yellow text-black py-2 rounded-md hover:bg-yellow-500 transition duration-300"
+            className="w-full bg-highlight text-black p-4 rounded-md hover:bg-yellow-500 transition duration-300"
           >
             Reset Password
           </button>

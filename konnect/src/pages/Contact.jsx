@@ -9,7 +9,7 @@ import contact from "../assets/contact.png"
 
 const Contact = () => {
   return (
-    <div className="mt-20 md:mt-11 max-w-full">
+    <div className="mt-20 bg-textColor md:mt-11 max-w-full">
       <h1 className="p-2 text-center text-xl md:hidden font-bold">
         Contact Us
       </h1>

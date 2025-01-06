@@ -14,10 +14,11 @@ export default {
     extend: {
       colors: {
         paleLavender: 'hsla(266, 39%, 88%, 1)',
-        textColor: 'hsla(210, 20%, 98%, 1)',
+        textColor: '#E6E6E6',
         textBlack: 'hsla(220, 4%, 15%, 1)',
         lineColor: 'hsla(0, 6%, 29%, 1)',
         yellow: 'hsla(54, 91%, 48%, 1)',
+        highlight: '#00C2AA',
         purpleBg: '#230E3D',
         formBg: 'hsla(0, 5%, 43%, 1)',
         brightRed: 'hsl(12, 88%, 59%)',
@@ -31,8 +32,8 @@ export default {
         customImage: "url(../assets/bgrectangle.png')",
       },
       backgroundImage: {
-        'hero-pattern': "url('./src/assets/Capture1.PNG')",
-        'about-hero': "url('./src/assets/aboutHero.png')",
+        'hero-pattern': "url('./src/assets/Hero.png')",
+        'about-hero': "url('./src/assets/Hero.png')",
         'contact': "url('./src/assets/contact.png')",
       },
     },

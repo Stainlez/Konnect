@@ -20,7 +20,7 @@ const SignUp = () => {
       <section className="flex relative container max-w-full">
         {/* flex container */}
         <div className="container m-auto flex flex-col w-screen md:w-7/12 items-center">
-          <form className="max-w-md mt-40 md:mt-60 flex-col space-y-7 p-4 md:space-y-9">
+          <form className="max-w-md mt-40 md:mt-40 flex-col space-y-7 p-4 md:space-y-9">
             <input
               type="text"
               name="firstname"
@@ -79,18 +79,18 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="w-1/2 mt-8 ml-24 bg-yellow font-semibold text-black py-2 rounded hover:bg-purple-400"
+              className="w-3/4 mt-16 ml-12 bg-highlight font-semibold text-black p-4 rounded hover:bg-green-400"
             >
               SIGN UP
             </button>
           </form>
 
-          <div className="container flex space-x-2 justify-center">
+          <div className="container mt-7 flex space-x-2 justify-center">
             <p className="bg-purpleBg text-center text-textColor text-nowrap">
               ALREADY HAVE AN ACCOUNT?
             </p>
             <span>
-              <Link to="/login" className="hover:text-purple-400 font-semibold text-yellow">
+              <Link to="/login" className="hover:text-green-400 font-semibold text-highlight">
                 SIGN-IN
               </Link>
             </span>

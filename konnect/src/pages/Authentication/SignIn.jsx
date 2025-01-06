@@ -9,10 +9,10 @@ function SignInForm() {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
-    <div className="h-screen flex relative justify-between bg-purpleBg">
+    <div className="h-screen flex relative justify-between bg-textColor">
       
       {/* Form Section */}
-      <div className="max-w-7xl w-full md:w-7/12 p-3 bg-purpleBg m-auto">
+      <div className="max-w-7xl w-full md:w-7/12 p-3 m-auto">
         <form className="max-w-md flex-col p-3 mt-20 m-auto">
           <div className="space-y-16">
             <input
@@ -46,22 +46,22 @@ function SignInForm() {
           </div>
 
           <p className="mt-4 text-left">
-            <Link to="/resetpassword" className="text-yellow hover:text-purple-400">
+            <Link to="/resetpassword" className="text-red-400 hover:text-green-400">
               Forgot Password?
             </Link>
           </p>
 
           <button
             type="submit"
-            className="w-1/2 mt-16 ml-28 align-center font-semibold bg-yellow text-black py-3 rounded hover:bg-purple-400"
+            className="w-3/4 mt-16 ml-12 align-center font-semibold bg-highlight text-black p-4 rounded hover:bg-green-400"
           >
             SIGN IN
           </button>
         </form>
 
         <div className="flex space-x-2 text-textColor justify-center align-center mt-4">
-          <p className="bg-purpleBg">DON&apos;T HAVE AN ACCOUNT?</p>
-          <Link to="/signup" className="font-semibold text-yellow hover:text-purple-400">
+          <p className="text-black">DON&apos;T HAVE AN ACCOUNT?</p>
+          <Link to="/signup" className="font-semibold text-highlight hover:text-green-400">
             SIGN UP
           </Link>
         </div>

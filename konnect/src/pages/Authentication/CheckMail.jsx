@@ -1,5 +1,5 @@
 // import React from 'react'
-import MailSendEmail from "../../assets/mail-send-envelope.png";
+import MailSendEmail from "../../assets/mailIcon.png";
 
 const CheckMail = () => {
   return (
@@ -13,7 +13,7 @@ const CheckMail = () => {
         <p className="text-sm text-gray-600">
           We have sent a password recover instructions to your email.
         </p>
-        <button className="w-2/3 px-4 py-2 text-sm font-medium text-black bg-yellow rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">
+        <button className="w-2/3 px-4 py-2 text-sm font-medium text-black bg-highlight rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">
           Open email app
         </button>
         <button className="text-sm text-gray-600 hover:underline">

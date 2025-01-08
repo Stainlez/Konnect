@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 function ResetPassword() {
   const [email, setEmail] = useState('');
@@ -11,6 +12,14 @@ function ResetPassword() {
 
   return (
     <div className="flex font-montserrat items-center justify-center min-h-screen bg-textColor">
+        <Link
+        to="/login"
+        // relative="path"
+        className="back-button flex font-bold mb-auto mt-11 md:mb-auto md:mt-20" 
+      >
+        &larr; <span className='text-sm pl-1 pt-1'> Back to Login</span>
+      </Link>
+
       <div className="w-full max-w-md p-8 space-y-3 bg-white rounded-lg shadow-md min-h-[400px]">
         <h1 className="text-2xl font-bold text-center text-gray-900">Reset Password</h1>
         <p className="text-sm text-center text-gray-600">

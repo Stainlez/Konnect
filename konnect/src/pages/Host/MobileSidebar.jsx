@@ -25,7 +25,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
         </div>
       <nav className="space-y-2">
       
-        <Link to="/dashboard" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
+        <Link to="." className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
         <div className="w-4 h-4 overflow-hidden cursor-pointer">
           <img
             src={home}
@@ -35,7 +35,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
         </div> <span className='text-sm'>Dashboard</span>
         </Link>
         
-        <Link to="/dashboard/profile" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
+        <Link to="profile" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
         <div className="w-4 h-4 overflow-hidden cursor-pointer">
           <img
             src={profile}
@@ -45,7 +45,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
         </div> <span className='text-sm'>Profile</span>
         </Link>
 
-        <Link to="/dashboard/services" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
+        <Link to="services" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
         <div className="w-4 h-4 overflow-hidden cursor-pointer">
           <img
             src={services}
@@ -55,10 +55,10 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
         </div> <span className='text-sm'>Services</span>
         </Link>
 
-        {/* <Link to="/dashboard/history" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
+        {/* <Link to="history" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
           History
         </Link> */}
-        <Link to="/dashboard/settings" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
+        <Link to="settings" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}>
         <div className="w-4 h-4 overflow-hidden cursor-pointer">
           <img
             src={settings}

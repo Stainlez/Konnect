@@ -10,7 +10,13 @@ function SignInForm() {
 
   return (
     <div className="h-screen font-montserrat flex relative justify-between bg-textColor">
-      
+      <Link
+        to="/welcome"
+        className="back-button flex font-bold mt-11 md:mt-20 md:ml-20" 
+      >
+        &larr; <span className='text-sm pl-1 pt-1'> Back</span>
+      </Link>
+
       {/* Form Section */}
       <div className="max-w-7xl w-full md:w-7/12 p-3 m-auto">
         <form className="max-w-md flex-col p-3 mt-20 m-auto">

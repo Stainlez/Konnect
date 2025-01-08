@@ -18,6 +18,13 @@ const SignUp = () => {
   return (
     <div className="bg-purpleBg font-montserrat min-h-screen max-w-full">
       <section className="flex relative container max-w-full">
+        <Link
+        to="/welcome"
+        className="back-button mt-11 flex font-bold text-white md:mt-20 md:ml-20" 
+      >
+        &larr; <span className='text-sm pl-1 pt-1'> Back</span>
+      </Link>
+        
         {/* flex container */}
         <div className="container m-auto flex flex-col w-screen md:w-7/12 items-center">
           <form className="max-w-md mt-40 md:mt-40 flex-col space-y-7 p-4 md:space-y-9">

@@ -25,7 +25,7 @@ const DesktopSidebar = () => {
           />
         </div>
       <nav className="space-y-2">
-        <NavLink to="/dashboard"
+        <NavLink to="."
         end 
         className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
         style={({isActive}) => isActive ? activeStyles : null}
@@ -39,7 +39,7 @@ const DesktopSidebar = () => {
         </div> <span className='text-sm'>Dashboard</span>
         </NavLink>
 
-        <NavLink to="/dashboard/profile" 
+        <NavLink to="profile" 
         className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
         style={({isActive}) => isActive ? activeStyles : null}
         >
@@ -52,7 +52,7 @@ const DesktopSidebar = () => {
         </div> <span className='text-sm'>Profile</span>
         </NavLink>
 
-        <NavLink to="/dashboard/services" 
+        <NavLink to="services" 
         className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
         style={({isActive}) => isActive ? activeStyles : null}
         >
@@ -65,10 +65,10 @@ const DesktopSidebar = () => {
           </div> <span className='text-sm'>Services</span>
         </NavLink>
 
-        {/* <NavLink to="/dashboard/history" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" style={({isActive}) => isActive ? activeStyles : null}>
+        {/* <NavLink to="history" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" style={({isActive}) => isActive ? activeStyles : null}>
           History
         </NavLink> */}
-        <NavLink to="/dashboard/settings" 
+        <NavLink to="settings" 
         className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
         style={({isActive}) => isActive ? activeStyles : null}
         >

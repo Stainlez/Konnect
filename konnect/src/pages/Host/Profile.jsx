@@ -41,9 +41,9 @@ const Profile = () => {
 
         {/* Profile Picture */}
         <div className="flex ml-14 mb-6">
-          <img
-            src="https://via.placeholder.com/100"
-            alt="Profile"
+        <img
+            src="https://www.w3schools.com/w3images/avatar2.png"
+            alt="Avatar"
             className="rounded-full w-32 h-32"
           />
         <div className='md:hidden ml-auto m-auto'>

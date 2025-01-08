@@ -12,6 +12,9 @@ export default {
       xl: '1440px',
     },
     extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
       colors: {
         paleLavender: 'hsla(266, 39%, 88%, 1)',
         textColor: '#E6E6E6',
@@ -35,6 +38,16 @@ export default {
         'hero-pattern': "url('./src/assets/Hero.png')",
         'about-hero': "url('./src/assets/Hero.png')",
         'contact': "url('./src/assets/contact.png')",
+        'moving': "url('../assets/LandingPageAnimate.png')"
+      },
+      animation: {
+        backgroundMove: 'backgroundMove 15s linear infinite',
+      },
+      keyframes: {
+        backgroundMove: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '100% 100%' },
+        },
       },
     },
   },

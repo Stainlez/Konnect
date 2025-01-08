@@ -16,7 +16,7 @@ const SignUp2 = () => {
   // };
 
   return (
-    <div className="bg-purpleBg min-h-screen max-w-full">
+    <div className="bg-purpleBg font-montserrat min-h-screen max-w-full">
       <section className="flex relative container max-w-full">
         {/* flex container */}
         <div className="container m-auto flex flex-col w-screen md:w-7/12 items-center">

@@ -1,9 +1,9 @@
-// import React from 'react'
-import {Link} from "react-router-dom"
+import React, { useState, useEffect } from 'react';
 import logo2 from "../assets/logo2.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import TestimonialsSection from "../components/Testimonial"
+import SlideshowLandingPage from "../components/SlideshowLandingPage"
 import Bubu from "../assets/Bubu.jpg"
 import jasmine from "../assets/Jasmine.jpg"
 import mabel from "../assets/Mabel.jpg"
@@ -19,13 +19,14 @@ import rating from "../assets/Ratings.png"
 import out5 from "../assets/out5.png"
 
 const LandingPage = () => {
+
   return (
-    <div className='bg-paleLavender max-w-full'>
+    <div className='bg-textColor max-w-full'>
       {/* Hero Section */}
-        <div className='container flex flex-col justify-center items-center bg-about-hero p-5 min-h-screen max-w-full bg-no-repeat bg-cover bg-center'>
+        <div className="container flex flex-col justify-center items-center p-5 min-h-screen max-w-full bg-[url('/../../public/AnimateSVG.svg')] bg-cover animate-[backgroundMove_2s_infinite]">
             <div className='flex-col mt-24 space-y-5 max-w-2xl mx-auto'>
               {/* <p className='bg-yellow mx-auto p-2 text-center rounded-full w-20'>About</p> */}
-              <p className='text-textColor text-center text-82 md:text-3xl lg:text-7xl font-bold'>Discover, Share and Thrive with Konnect</p>
+              <p className='text-textColor text-center text-5xl md:text-7xl lg:text-7xl font-extrabold'>Discover, Share and Thrive with Konnect</p>
               <p className='text-textColor pt-5 text-center text-sm md:text-base lg:text-lg'>Join a vibrant community rooted in entrepreneurship, access essential tools and connect with like-minded individuals to grow your network.</p>
               {/* <Link to="/welcome" className="bg-highlight m-auto text-white px-6 py-3 rounded hover:bg-green-600">Get Started</Link> */}
               {/* <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 mb-8">
@@ -38,61 +39,23 @@ const LandingPage = () => {
               </div> */}
             </div>
         </div>
-            
+        
 
-            {/* Get to Know Us */}
-        {/* <div className='container mt-24 mx-auto px-4 max-w-4xl'>
-            <h1 className='pt-5 text-center text-2xl md:text-3xl lg:text-4xl font-bold'>
-              Get to know us.
-            </h1>
-            <div className="flex flex-col md:flex-row mt-10 gap-8 justify-center items-center">
-              <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
-              <div className='flex md:hidden justify-center items-center w-2/4'>
-                <img className='w-3/4 object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={jasmine} alt="Jasmine" />
-                </div>
-                <div className='hidden md:flex justify-center items-center'>
-                  <img className='object-cover w-full  rounded-[9px] mb-[9px] h-56 md:w-52' src={jasmine} alt="Jasmine" />
-                  </div>
-                  
-                <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Okechukwu-Elemba Onyinye</h2>
-                <p className='mt-2 font-bold'>Product Designer</p>
-                <p className='mt-2'>Certified designer from Genesys 
-                and Digital Dreams ICT Academy.</p>
-              </div>
-
-              <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
-              <div className='flex md:hidden justify-center items-center w-2/4 h-2/4'>
-                <img className='w-3/4 md:w-full rounded-[9px] mb-[9px] h-56' src={Bubu} alt="Jasmine" />
-                </div>
-                <div className='hidden md:flex justify-center items-center '>
-                  <img className='w-3/4 rounded-[9px] mb-[9px] h-56 md:w-52' src={Bubu} alt="Jasmine" />
-                  </div>
-                <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Ezeakalue Jude</h2>
-                <p className='mt-2 font-bold'>Frontend Developer</p>
-                <p className='mt-2'>Certified developer from platforms like Sololearn, Scrimba, freeCodeCamp.</p>
-              </div>
-
-              <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
-              <div className='flex md:hidden justify-center items-center w-2/4'>
-                <img className='w-3/4 object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={mabel} alt="Jasmine" />
-                </div>
-                <div className='hidden md:flex justify-center items-center '>
-                  <img className='w-3/4 object-cover rounded-[9px] mb-[9px] h-56 md:w-52' src={mabel} alt="Jasmine" />
-                  </div>
-                <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Ukoha Chidinma M.</h2>
-                <p className='mt-2 font-bold'>Backend Developer</p>
-                <p className='mt-2'>Certified designer from Genesys 
-                and Digital Dreams ICT Academy.</p>
-              </div>
-            </div>
-        </div> */}
+           
           {/* Explore Services */}
-        <div className='container mx-auto mt-12 px-4'>
-              <h1 className='pt-5 text-center text-2xl md:text-3xl lg:text-4xl font-bold'>
+        <div className='container mx-auto mt-12'>
+              <div className='space-y-5'>
+              <h1 className='pt-5 text-center text-2xl md:text-3xl lg:text-4xl font-extrabold'>
               Explore our services
               </h1>
-            <div className="flex flex-col md:flex-row mt-10 gap-8 justify-center">
-                <div className="card rounded-[9px] p-5 bg-slate-50 flex flex-col w-full md:w-52 text-xs md:text-sm">
+              <p className='text-center'>We offer a platform where clients can access a wide range of services provided by student entrepreneurs <br /> looking to expand their business and gain practical experience.</p>
+              </div>
+
+                <SlideshowLandingPage/>
+
+              {/* <img src={Landing1} alt="" /> */}
+
+                {/* <div className="card rounded-[9px] p-5 bg-slate-50 flex flex-col w-full md:w-52 text-xs md:text-sm">
                     <h3 className='text-xl text-center my-5 font-bold'>For whom?</h3>
                     <img className='w-[170px] rounded-[9px] mb-[9px] mt-1 mx-auto' src={laptop} alt="Jasmine" />
                     
@@ -111,8 +74,7 @@ const LandingPage = () => {
                     <img className='max-w-[170px] rounded-[9px] mb-[9px] -mt-4 mx-auto' src={rocket} alt="rocket" />
                     
                     <p className='-mt-5'>Gain a competitive edge, connect with like-minded individuals, easy provision of services and navigate starting and running a business in today&apos;s fast-paced environment.</p>
-                </div>
-            </div>
+                </div> */}
         </div>
 
 

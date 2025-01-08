@@ -21,7 +21,7 @@ const activeStyle = {
   };
 
   return (
-    <nav className="relative container max-w-full p- bg-black">
+    <nav className="relative font-montserrat container max-w-full p- bg-black">
     {/* // <nav className="flex items-center justify-between p-6 bg-black text-white"> */}
       {/* Flex container */}
       <div className="flex items-center justify-between">
@@ -77,7 +77,7 @@ const activeStyle = {
       {/* Mobile Menu */}
       <div className="md:hidden ">
         <div
-          className={`absolute bg-paleLavender max-w-full flex-col items-center py-8 mt-10 space-y-6 font-bold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md ${
+          className={`absolute bg-textColor max-w-full flex-col items-center py-8 mt-2 space-y-6 font-bold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md ${
             isOpen ? "flex" : "hidden"
           }`} // Toggle between 'flex' and 'hidden' classes based on state
         >

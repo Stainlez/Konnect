@@ -1,6 +1,9 @@
 // import React from 'react'
 import img from "../assets/aboutHero.png";
 import { NavLink } from "react-router-dom";
+import logo2 from "../assets/logo2.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useState, useEffect } from "react";
 import Bubu from "../assets/Bubu.jpg"
 import jasmine from "../assets/Jasmine.jpg"
@@ -111,7 +114,7 @@ const About = () => {
             <div className="flex flex-col md:flex-row mt-10 gap-8 justify-center items-center">
               <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center">
               <div className='flex md:hidden justify-center items-center w-2/4'>
-                <img className='w-3/4 object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={jasmine} alt="Jasmine" />
+                <img className='w-full object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={jasmine} alt="Jasmine" />
                 </div>
                 <div className='hidden md:flex justify-center items-center'>
                   <img className='object-cover w-full  rounded-[9px] mb-[9px] h-52 md:w-52' src={jasmine} alt="Jasmine" />
@@ -125,22 +128,22 @@ const About = () => {
 
               <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
               <div className='flex md:hidden justify-center items-center w-2/4 h-2/4'>
-                <img className='w-3/4 md:w-full rounded-[9px] mb-[9px] h-56' src={Bubu} alt="Jasmine" />
+                <img className='w-full md:w-full rounded-[9px] mb-[9px] h-56' src={Bubu} alt="Jasmine" />
                 </div>
                 <div className='hidden md:flex justify-center items-center '>
                   <img className='w-3/4 rounded-[9px] mb-[9px] h-52 md:w-52' src={Bubu} alt="Jasmine" />
                   </div>
-                <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Ezeakalue Jude</h2>
+                <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Ezeakalue Jude E.</h2>
                 <p className='mt-2 font-bold'>Frontend Developer</p>
                 <p className='mt-2 text-xs'>Certified developer from platforms like Sololearn, Scrimba, freeCodeCamp.</p>
               </div>
 
               <div className="card flex flex-col w-full md:w-52 text-xs md:text-sm items-center text-center">
               <div className='flex md:hidden justify-center items-center w-2/4'>
-                <img className='w-3/4 object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={mabel} alt="Jasmine" />
+                <img className='w-full object-cover md:w-full rounded-[9px] mb-[9px] h-56' src={mabel} alt="Mabel" />
                 </div>
                 <div className='hidden md:flex justify-center items-center '>
-                  <img className='w-3/4 object-cover rounded-[9px] mb-[9px] h-52 md:w-52' src={mabel} alt="Jasmine" />
+                  <img className='w-3/4 object-cover rounded-[9px] mb-[9px] h-52 md:w-52' src={mabel} alt="Mabel" />
                   </div>
                 <h2 className="font-bold mt-2 overflow-hidden text-ellipsis">Ukoha Chidinma M.</h2>
                 <p className='mt-2 font-bold'>Backend Developer</p>
@@ -154,6 +157,72 @@ const About = () => {
       <div className="p-16 mt-6 mb-6">
         <div className="border-t-2  border-t-gray-500 "></div>
       </div>
+
+      {/*Call to action*/}
+      <section className="bg-textColor relative">
+      <div className="flex items-center justify-center bg-gray-900 text-gray-300 h-3/4 relative z-10">
+        {/* Left Content */}
+        <div className="md:w-2/6 p-8 space-y-12">
+          <h2 className="text-4xl font-semibold mb-4">Have a question? <br /> Our team is happy to assist you</h2>
+          <p className="mb-6 text-wrap text-gray-300">Ask about KONNECT products, pricing, implementation, or anything  else. Our highly trained reps are <br/> standing by, ready to help.</p>
+          <div><NavLink
+            to="/contact" className="bg-teal-500 mt-10 text-white px-6 py-3 rounded-md hover:bg-teal-600 transition">CONTACT US
+            </NavLink></div>
+        </div>
+
+        {/* Right Content - Overlapping Circles */}
+        <div className="hidden md:flex w-1/2 relative items-center justify-center">
+          <div className="w-80 h-80 bg-purple-600 rounded-full absolute right-[-70px] top-[-70px]"></div>
+          <div className="w-80 h-80 bg-teal-500 rounded-full absolute right-[-230px] top-[px]"></div>
+        </div>
+      </div>
+
+      <div className="p-16 mt-6 mb-6"></div>
+
+      {/* Background Circles Overlapping Section */}
+      {/* <div className="absolute top-0 right-0 w-full h-full">
+        <div className="w-96 h-96 bg-purple-600 rounded-full absolute bottom-[-100px] right-[-100px] opacity-30"></div>
+        <div className="w-72 h-72 bg-teal-500 rounded-full absolute top-0 right-[-150px] opacity-40"></div>
+      </div> */}
+    </section>
+
+             {/* Footer */}
+          <footer className="bg-white text-black py-16">
+                            
+             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      {/* Logo Section */}
+      <div className="p-4 rounded-xl shadow-xl">
+        <img 
+          src={logo2} 
+          alt="logo" 
+          className="hidden md:flex max-h-20 object-contain" 
+        />
+      </div>
+    
+      {/* Social Icons Section */}
+      <div className="flex space-x-12 justify-center mx-auto md:justify-end">
+        <a href="#" className="hover:text-gray-500">
+          <FontAwesomeIcon icon={faFacebook} className="h-8" />
+        </a>
+        <a href="#" className="hover:text-gray-500">
+          <FontAwesomeIcon icon={faInstagram} className="h-8" />
+        </a>
+        <a href="#" className="hover:text-gray-500">
+          <FontAwesomeIcon icon={faTwitter} className="h-8" />
+        </a>
+        <a href="#" className="hover:text-gray-500">
+          <FontAwesomeIcon icon={faLinkedin} className="h-8" />
+        </a>
+      </div>
+    </div>
+    
+    
+              <hr className="my-8 border-gray-300" />
+              <div className="text-center text-sm text-gray-500">
+                2024 Relume. All rights reserved. <a href="#" className="hover:underline">Privacy Policy</a> | <a href="#" className="hover:underline">Terms of Service</a> | <a href="#" className="hover:underline">Cookie Settings</a>
+              </div>
+            </footer>
+    
     </div>
   )
 }

@@ -3,7 +3,7 @@ import MailSendEmail from "../../assets/mailIcon.png";
 
 const CheckMail = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-paleLavender">
+    <div className="flex font-montserrat items-center justify-center min-h-screen bg-textColor">
       <div className="w-full max-w-md  p-8 space-y-6 bg-white rounded-lg shadow-md text-center">
 
         <div className="bg-gray-500 w-24 h-24 mx-auto rounded-lg flex items-center justify-center">

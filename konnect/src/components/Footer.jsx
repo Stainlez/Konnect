@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='font-montserrat'>
         <p>Footer goes here</p>
     </div>
   )

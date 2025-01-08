@@ -9,7 +9,7 @@ function SignInForm() {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
-    <div className="h-screen flex relative justify-between bg-textColor">
+    <div className="h-screen font-montserrat flex relative justify-between bg-textColor">
       
       {/* Form Section */}
       <div className="max-w-7xl w-full md:w-7/12 p-3 m-auto">

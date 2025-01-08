@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(timer); // Cleanup timer
   }, [currentIndex]);
@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
 
   return (
     <section
-      className="py-12 text-textColor"
+      className="py-12 font-montserrat text-textColor"
       style={{ backgroundColor: bgColors[currentIndex] }}
     >
       <div className="max-w-6xl container m-auto px-5 flex flex-col md:flex-row justify-between items-center">

@@ -59,6 +59,109 @@ html, body {
     transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
 
+.product-type {
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .product-type:hover {
+    color: #FFEAD0;
+  }
+  
+  .product-type:focus {
+    outline: none;
+  }
+  
+  .product-type.selected {
+    color: #FFEAD0;
+  }
+  
+  .product-type.beauty:hover, .product-type.beauty.selected {
+    background-color: #E17654;
+  }
+  
+  .product-type.tech:hover, .product-type.tech.selected {
+    background-color: #3A3737;
+  }
+  
+  .product-type.art:hover, .product-type.art.selected {
+    background-color: #00C2AA;
+  }
+
+  .product-type.design:hover, .product-type.design.selected {
+    background-color: #5B309C;
+  }
+  
+  .product-type.fashion:hover, .product-type.fashion.selected {
+    background-color: #E17654;
+  }
+
+  .product-type.photography:hover, .product-type.photography.selected {
+    background-color: #3A3737;
+  }
+  
+  .product-type.interior-design:hover, .product-type.interior-design.selected {
+    background-color: #00C2AA;
+  }
+  
+  .product-type.culinary:hover, .product-type.culinary.selected {
+    background-color: #5B309C;
+  }
+  
+  .product-type.clear-filters {
+    margin-left: -20px;
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #4D4D4D;
+  }
+  
+  i[class*='product-type-'] {
+    padding: 7px 14px;
+    color: black;
+  }
+  
+  .van-detail-container {
+    padding-inline: 27px;
+  }
+  
+  .van-detail-container .back-button {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .van-detail-container .back-button:visited {
+    
+  }
+  
+  .van-detail-container .back-button span {
+    text-decoration: underline;
+  }
+  
+  .van-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #161616;
+    /* background-color: red; */
+    border-radius: 30px;
+    width: 700px;
+    max-height: 700px;
+    margin: auto;
+  }
+
 /* .bg-hero-pattern {
     position: relative;
     z-index: 1;

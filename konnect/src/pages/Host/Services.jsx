@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useSearchParams, useLoaderData, defer } from "react-router-dom"
 import SearchBar from './SearchBar'
 import Services1 from "../../assets/Service1.png"
 import Services2 from "../../assets/Service2.png"
@@ -34,7 +35,7 @@ const servicesData = [
   { id: 7, name: "Chike Obi", location: "New Keneth Hostel", category: "Culinary", product: "Chi's Snacks", avatar: Person7, imageUrl: Services7 },
   { id: 8, name: "Ada Umeh", location: "Independence", category: "Tech", product: "Dev Umeh", avatar: Person8, imageUrl: Services8 },
   { id: 9, name: "Ifeanyi Nwachukwu", location: "Hilltop", category: "Beauty", product: "Nwach Touch", avatar: Person9, imageUrl: Services9 },
-  { id: 10, name: "Tina Okafor", location: "Chisco Hostel", category: "Interior Design", product: "Interior by Tina", avatar: Person10, imageUrl: Services10 },
+  { id: 10, name: "Tina Okafor", location: "Chisco Hostel", category: "Interior-Design", product: "Interior by Tina", avatar: Person10, imageUrl: Services10 },
   { id: 11, name: "Kachi Emeka", location: "Odim Gate", category: "Photography", product: "Lens Kachi", avatar: Person3, imageUrl: Services1 },
   { id: 12, name: "Emeka John", location: "New Keneth", category: "Art", product: "John's Artworks", avatar: Person5, imageUrl: Services2 },
   { id: 13, name: "Ngozi Chike", location: "Hilltop", category: "Art", product: "Chike's Art", avatar: Person3, imageUrl: Services3 },
@@ -45,17 +46,165 @@ const servicesData = [
 const Services = () => {
   const [services, setServices] = useState([]);
   const [visibleServices, setVisibleServices] = useState(12);
-
+  const [searchParams, setSearchParams] = useSearchParams()
+  
   useEffect(() => {
     setServices(servicesData);
   }, []);
 
+   // Get the "category" query param from the URL
+   const categoryFilter = searchParams.get("category");
+  // console.log(categoryFilter)
+
+   // Filter products based on the category query param
+   const displayedServices = categoryFilter
+       ? servicesData.filter(product => product.category.toLowerCase() === categoryFilter)
+       : servicesData;
+
+         // Limit the number of displayed services
+    // const visibleServices = 10; // Adjust this number as needed
+
+    // Render the filtered services
+    const serviceElements = displayedServices.slice(0, visibleServices).map((service) => (
+        <div
+            key={service.id}
+            className="justify-items-center rounded-lg overflow-hidden mb-7"
+        >
+            <div className="flex ml-auto space-x-4 mb-3">
+                <img
+                    src={service.avatar}
+                    alt={service.product}
+                    className="h-12 rounded-full object-cover"
+                />
+                <div>
+                    <p className="font-bold mt-2">{service.name}</p>
+                    <div className="inline-flex items-center text-gray-600">
+                        <img src={location} alt="location" className="h-3 object-contain pr-1" />
+                        {service.location}
+                    </div>
+                </div>
+            </div>
+            <img
+                src={service.imageUrl}
+                alt={service.product}
+                className="h-52 md:w-full object-cover"
+            />
+            <div className="pt-3 ml-auto">
+                <div className="inline-flex items-center text-gray-600 border border-gray-400 px-3 py-1">
+                    <img src={tag} alt="tag" className="h-3 object-contain mr-2" />
+                    {service.category}
+                </div>
+                <h2 className="text-xl font-bold mt-2">{service.product}</h2>
+                <button className="bg-purple-800 w-full text-white px-4 py-2 rounded-md mt-4 hover:bg-purple-700">
+                    View Product
+                </button>
+            </div>
+        </div>
+    ));
+
+
+          function handleFilterChange(key, value) {
+            setSearchParams(prevParams => {
+                  if (value === null) {
+                      prevParams.delete(key)
+                  } else {
+                      prevParams.set(key, value)
+                  }
+                  return prevParams
+              })
+          }
+
+  // const categoryFilter = searchParams.get("category")
+
+  //   const displayedProducts = categoryFilter
+  //   ? products.filter(product => product.category === categoryFilter)
+  //   : products
+
+//   function handleFilterChange(key, value) {
+//     setSearchParams(prevParams => {
+//         if (value === null) {
+//             prevParams.delete(key)
+//         } else {
+//             prevParams.set(key, value)
+//         }
+//         return prevParams
+//     })
+// }
+
   return (
     <div className='px-8 font-montserrat bg-textColor min-h-screen max-w-full'>
       <SearchBar/>
-      <h1 className="text-3xl font-bold p-5 pb-12">Find your Services here!</h1>
+      <h1 className="text-3xl font-bold p-5 pb-6">Find your Services here!</h1>
+      <div className="flex flex-wrap space-x-1 space-y-1 justify-center pt-2 pb-6">
+                <button
+                    onClick={() => handleFilterChange("category", "beauty")}
+                    className={
+                        `product-type beauty 
+                        ${categoryFilter === "beauty" ? "selected" : ""}`
+                    }
+                >Beauty</button>
+                <button
+                    onClick={() => handleFilterChange("category", "tech")}
+                    className={
+                        `product-type tech 
+                        ${categoryFilter === "tech" ? "selected" : ""}`
+                    }
+                >Tech</button>
+                <button
+                    onClick={() => handleFilterChange("category", "art")}
+                    className={
+                        `product-type art 
+                        ${categoryFilter === "art" ? "selected" : ""}`
+                    }
+                >Art</button>
+                <button
+                    onClick={() => handleFilterChange("category", "design")}
+                    className={
+                        `product-type design 
+                        ${categoryFilter === "design" ? "selected" : ""}`
+                    }
+                >Design</button>
+                <button
+                    onClick={() => handleFilterChange("category", "fashion")}
+                    className={
+                        `product-type fashion 
+                        ${categoryFilter === "fashion" ? "selected" : ""}`
+                    }
+                >Fashion</button>
+                <button
+                    onClick={() => handleFilterChange("category", "culinary")}
+                    className={
+                        `product-type culinary 
+                        ${categoryFilter === "culinary" ? "selected" : ""}`
+                    }
+                >Culinary</button>
+                <button
+                    onClick={() => handleFilterChange("category", "photography")}
+                    className={
+                        `product-type photography 
+                        ${categoryFilter === "photography" ? "selected" : ""}`
+                    }
+                >Photography</button>
+                <button
+                    onClick={() => handleFilterChange("category", "interior-design")}
+                    className={
+                        `product-type interior-design 
+                        ${categoryFilter === "interior-design " ? "selected" : ""}`
+                    }
+                >Interior Design</button>
+
+                {categoryFilter ? (
+                    <button
+                        onClick={() => handleFilterChange("category", null)}
+                        className="product-type clear-filters"
+                    >Clear filter</button>
+                ) : null}
+
+            </div>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.slice(0, visibleServices).map((service) => (
+      {serviceElements}
+        {/* {services.slice(0, visibleServices).map((service) => (
           <div
             key={service.id}
             className="justify-items-center rounded-lg overflow-hidden mb-7"
@@ -93,7 +242,7 @@ const Services = () => {
               </button>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
 
       {/* Load More Button */}

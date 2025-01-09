@@ -9,11 +9,7 @@ export default function Header() {
     fontSize: "18px",
     color: "#00C2AA",
 }
-const activeStyle = {
-  // fontSize: "18px",
-  // color: "highlight",
-  text:"highlight",
-}
+
 
   // Function to handle menu toggle
   const handleMenuToggle = () => {
@@ -27,7 +23,7 @@ const activeStyle = {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="h-20">
-          <img src={logo} alt="logo" className="mr-auto ml-4 md:ml-9 h-20 object-cover rounded-full" />
+          <NavLink to="/"><img src={logo} alt="logo" className="mr-auto ml-4 md:ml-9 h-20 object-cover rounded-full" /></NavLink>
         </div>
 
         {/* Menu Items (hidden on mobile) */}

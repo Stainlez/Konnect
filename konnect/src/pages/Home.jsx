@@ -1,17 +1,32 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import img from "../assets/Home1.jpeg";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
+  const words = ["faster", "with ease", "efficiently"];
+  const [index, setIndex] = useState(0);
+
+  // Update the word every 2 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [words.length]);
+  
   return (
     <div className="bg-textColor">
       <div className="p-11 space-y-11">
-        <div className="space-y-2">
-          <h1 className="text-black pt-8 max-w-md mt-16 text-5xl font-semibold md:text-5xl">
-            Manage your services <span className="text-purple-900">faster</span>
-          </h1>
-          <p className="">Find the entrepreneurial services nearest to you.</p>
-        </div>
+      <div className="space-y-2">
+      <h1 className="text-black text-nowrap pt-8 max-w-md mt-16 text-5xl font-semibold md:text-5xl">
+        Manage your <br />services{" "}
+        <span className="text-purple-900 text-nowrap transition-transform duration-400">
+          {words[index]}
+        </span>
+      </h1>
+      <p className="">Find the entrepreneurial services nearest to you.</p>
+    </div>
         <div className="mt-2">
           <NavLink
             to="/welcome"

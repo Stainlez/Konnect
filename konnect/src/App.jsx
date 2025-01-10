@@ -1,6 +1,13 @@
 // import React from 'react';
 // import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+// import { BrowserRouter, Routes, Route } from "react-router-dom"
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom"
+
 import Home from "./pages/Home"
 import LandingPage from "./pages/LandingPage"
 import About from "./pages/About"
@@ -14,37 +21,41 @@ import ResetPassword from "./pages/Authentication/ResetPassword"
 import CheckMail from "./pages/Authentication/CheckMail"
 import CreateNewPassword from "./pages/Authentication/CreateNewPassword"
 import Layout from "./components/Layout"
+import GeneralLayout from "./components/GeneralLayout"
+import NotFound from "./pages/NotFound"
+import Error from "./pages/Error"
 // import Sidebar from "./pages/Host/Sidebar"
 import Dashboard from "./pages/Host/Dashboard"
 import Profile from "./pages/Host/Profile"
 import Services from "./pages/Host/Services"
+import { loader as servicesLoader } from "./pages/productLoader"
 // import History from "./pages/Host/History"
 import Settings from "./pages/Host/Settings"
 import HostLayout from "./components/HostLayout"
 import './App.css'
 
-function App() {
-  
-
-
-  return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-          <Route index element={<LandingPage />} />
-          <Route path="home" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="welcome" element={<Welcome />} />
-        
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<GeneralLayout />}>
+        <Route path="/" element={<Layout />}>  
+            <Route index element={<LandingPage />} />
+            <Route path="home" element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="services" element={<Services />} 
+            loader={servicesLoader}
+            errorElement={<Error />}
+            />
+            <Route path="contact" element={<Contact />} />
+            <Route path="welcome" element={<Welcome />} />
+          </Route>
         {/* <Route path="/host" element={<HostLayout />}>
         </Route> */}
-      </Route>
           <Route path="dashboard" element={<HostLayout />}>
               <Route index element={<Dashboard />} />
               <Route path="profile" element={<Profile />} />
-              <Route path="services" element={<Services />} />
+              <Route path="services" element={<Services />} 
+                loader={servicesLoader}
+                errorElement={<Error />}
+              />
               {/* <Route path="/dashboard/history" element={<History />} /> */}
               <Route path="settings" element={<Settings />} />
               {/* Add more routes as needed */}
@@ -55,11 +66,18 @@ function App() {
           <Route path="resetpassword" element={<ResetPassword />} />
           <Route path="checkmail" element={<CheckMail />} />
           <Route path="newpassword" element={<CreateNewPassword />} />
+          <Route path="*" element={<NotFound />} />
+
+      </Route>
+
+))
+
+function App() {
+  
 
 
-
-    </Routes>
-  </BrowserRouter>
+  return (
+    <RouterProvider router={router}/>
   )
 }
 

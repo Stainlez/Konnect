@@ -28,7 +28,9 @@ import Error from "./pages/Error"
 import Dashboard from "./pages/Host/Dashboard"
 import Profile from "./pages/Host/Profile"
 import Services from "./pages/Host/Services"
+import ServicesDetails from "./pages/Host/ServicesDetails"
 import { loader as servicesLoader } from "./pages/productLoader"
+import { loader as servicesDetailLoader } from "./pages/productLoader"
 // import History from "./pages/Host/History"
 import Settings from "./pages/Host/Settings"
 import HostLayout from "./components/HostLayout"
@@ -55,10 +57,18 @@ const router = createBrowserRouter(createRoutesFromElements(
               <Route path="services" element={<Services />} 
                 loader={servicesLoader}
                 errorElement={<Error />}
-              />
+              >
+                  <Route 
+                    path=":seviceId" 
+                    element={<ServicesDetails />} 
+                    // errorElement={<Error />}
+                    loader={servicesDetailLoader}
+                    // loader={async () => await requireAuth()}
+                  />
+                </Route>
               {/* <Route path="/dashboard/history" element={<History />} /> */}
               <Route path="settings" element={<Settings />} />
-              {/* Add more routes as needed */}
+              
           </Route>
           <Route path="login" element={<SignIn />} />
           <Route path="signup" element={<SignUp />} />

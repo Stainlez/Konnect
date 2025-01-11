@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, useLoaderData } from "react-router-dom"
+import { useSearchParams, useLoaderData, useNavigate, Outlet } from "react-router-dom"
 import SearchBar from './SearchBar'
 // import { getAllData } from '../../api';
-import { loader } from '../productLoader';
+// import { loader } from '../productLoader';
 // import Services1 from "../../assets/Service1.png"
 // import Services2 from "../../assets/Service2.png"
 // import Services3 from "../../assets/Service3.png"
@@ -65,6 +65,7 @@ const Services = () => {
   const services = useLoaderData();
   const [visibleServices, setVisibleServices] = useState(12);
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   // If services are not loaded, display loading message
   if (!services) {
@@ -102,7 +103,10 @@ const Services = () => {
           {service.category}
         </div>
         <h2 className="text-xl font-bold mt-2">{service.product}</h2>
-        <button className="bg-purple-800 w-full text-white px-4 py-2 rounded-md mt-4 hover:bg-purple-700">
+        <button 
+          className="bg-purple-800 w-full text-white px-4 py-2 rounded-md mt-4 hover:bg-purple-700"
+          onClick={() => navigate(`/services/${service.id}`)}
+        >
           View Product
         </button>
       </div>
@@ -164,6 +168,8 @@ const Services = () => {
           </button>
         </div>
       )}
+
+      <Outlet/>
     </div>
   );
 };

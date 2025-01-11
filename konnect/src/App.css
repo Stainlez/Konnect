@@ -162,6 +162,33 @@ html, body {
     margin: auto;
   }
 
+  /*Modal Styling*/
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bg-black {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .bg-white {
+    background-color: #fff;
+  }
+  
+  .p-6 {
+    padding: 1.5rem;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
 
 
 /* .bg-hero-pattern {

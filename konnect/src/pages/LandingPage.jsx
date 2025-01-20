@@ -23,7 +23,7 @@ const LandingPage = () => {
   return (
     <div className='bg-textColor max-w-full'>
       {/* Hero Section */}
-        <div className="container flex flex-col justify-center items-center p-5 min-h-screen max-w-full bg-[url('/../../public/AnimateSVG.svg')] bg-cover animate-[backgroundMove_2s_infinite]">
+        <div className="container flex flex-col justify-center items-center p-5 min-h-screen max-w-full bg-[url('/AnimateSVG.svg')] bg-cover animate-[backgroundMove_2s_infinite]">
             <div className='flex-col mt-24 space-y-5 max-w-2xl mx-auto'>
               {/* <p className='bg-yellow mx-auto p-2 text-center rounded-full w-20'>About</p> */}
               <p className='text-textColor text-center text-5xl md:text-7xl lg:text-7xl font-extrabold'>Discover, Share and Thrive with Konnect</p>

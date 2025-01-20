@@ -13,17 +13,14 @@ import rocket from "../assets/rocket.png"
 import Ben from "../assets/Ben.png"
 import Ochomma from "../assets/Ochomma.png"
 import Kitana from "../assets/Kitana.png"
-import star from "../assets/Stargrp.png"
-import four from "../assets/four.png"
-import rating from "../assets/Ratings.png"
-import out5 from "../assets/out5.png"
+
 
 const LandingPage = () => {
 
   return (
     <div className='bg-textColor max-w-full'>
       {/* Hero Section */}
-        <div className="container flex flex-col justify-center items-center p-5 min-h-screen max-w-full bg-[url('/../../public/AnimateSVG.svg')] bg-cover animate-[backgroundMove_2s_infinite]">
+        <div className="container flex flex-col justify-center items-center p-5 min-h-screen max-w-full bg-[url('/AnimateSVG.svg')] bg-cover animate-[backgroundMove_2s_infinite]">
             <div className='flex-col mt-24 space-y-5 max-w-2xl mx-auto'>
               {/* <p className='bg-yellow mx-auto p-2 text-center rounded-full w-20'>About</p> */}
               <p className='text-textColor text-center text-5xl md:text-7xl lg:text-7xl font-extrabold'>Discover, Share and Thrive with Konnect</p>
@@ -139,74 +136,23 @@ Business has been booming as well.</p>
               </div>
         </div> */}
 
-        {/* Ratings */}
-        {/* <div className='container mx-auto flex flex-col md:flex-row justify-center items-center gap-8 p-16'>
-          <div className='space-y-3'>
-              <img src={four} alt="" className='mx-auto'/>
-              <img src={out5} alt="" className='mx-auto'/>
-          </div>
-          <div>
-              <img src={rating} alt="" />
-          </div>
-        </div> */}
+    
 
          {/* Testimonials Section */}
      <div className="bg-#E6E6E6">
         <h2 className="text-2xl md:text-3xl lg:text-4xl text-black font-bold text-center pt-5 mt-12 mb-8">Testimonials</h2>
         <TestimonialsSection/>
-         {/* <section className="py-12 bg-purple-700 text-white">
-  <div className="max-w-6xl container m-auto px-5 flex flex-col md:flex-row justify-evenly items-center">
-    {/* Left Content */}
-    {/* <div className="text-left px-9 md:px-3 md:max-w-md">
-      <h3 className="text-sm uppercase mb-2">Do not take it from us</h3>
-      <h2 className="text-4xl font-bold mb-6">Listen from our Happy Clients</h2>
-      <div className="flex space-x-6">
-        <button className="bg-purple-500 text-white p-3 rounded-full hover:bg-purple-600">←</button>
-        <button className="bg-black text-white p-3 rounded-full hover:bg-gray-800">→</button>
-      </div>
-    </div> */}
-
-    {/* Right Content */}
-    {/* <div className="text-white p-8 rounded-lg shadow-lg md:ml-24">
-      <div className="mb-4">
-        <svg className="w-8 h-8 text-purple-700 mb-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 17H7v-1h4.5V9.5h-3V8h3.5v9zm7 0h-4.5v-1H16V9.5h-3V8h3.5v9z"/>
-        </svg>
-        <p className="text-lg">Konnect helped me a lot in finding the nearest catering business for my birthday party. The response was quick and service was top notch.</p>
-      </div>
-      <div className="flex items-center mt-4">
-        <img src="https://via.placeholder.com/48" alt="User" className="w-12 h-12 rounded-full" />
-        <div className="ml-4">
-          <h3 className="text-lg font-bold">Ikenna Sandra</h3>
-          <p className="text-sm">Student</p>
-        </div>
-      </div>
-    </div>
-  </div> */}
-{/* </section> */}
        </div>
 
          {/* Footer */}
-      <footer className="bg-white text-black py-16">
-          {/* <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between"> */}
-            {/* <div className="text-xl font-bold">Logo</div> */}
-            {/* <ul className="flex space-x-6 justify-center md:justify-start">
-              <li><a href="#" className="hover:text-gray-500">Link One</a></li>
-              <li><a href="#" className="hover:text-gray-500">Link Two</a></li>
-              <li><a href="#" className="hover:text-gray-500">Link Three</a></li>
-              <li><a href="#" className="hover:text-gray-500">Link Four</a></li>
-              <li><a href="#" className="hover:text-gray-500">Link Five</a></li>
-            </ul> */}
-  
-
-          
-         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <footer className="bg-white text-black py-16">   
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
   {/* Logo Section */}
-  <div className="p-4 rounded-xl shadow-xl">
+  <div className="hidden md:flex p-4 rounded-xl shadow-xl">
     <img 
       src={logo2} 
       alt="logo" 
-      className="hidden md:flex max-h-20 object-contain" 
+      className=" max-h-20 object-contain" 
     />
   </div>
 
@@ -235,80 +181,6 @@ Business has been booming as well.</p>
         </footer>
     </div>
   )
-
-// return (
-//   <div className="font-sans">
-
-//     {/* Hero Section */}
-//     <section className="text-center bg-about-hero text-white h-screen flex flex-col justify-center items-center">
-//         <h1 className="text-4xl font-bold mb-4">Discover, Share and Thrive with Konnect</h1>
-//         <p className="max-w-xl mx-auto mb-6">Join a vibrant community rooted in entrepreneurship, access essential tools and connect with like-minded individuals to grow your network.</p>
-//         <button className="bg-highlight text-white px-6 py-3 rounded hover:bg-green-600">Get Started</button>
-//       </section>
-
-//     {/* Services Section */}
-//     <section className="min-h-screen py-32 text-center bg-gray-100">
-//         <h2 className="text-3xl font-bold mb-4">Explore our services</h2>
-//         <p className="max-w-2xl mx-auto mb-6">We offer a platform where ideas can evolve into large-scale enterprises, making it possible for talented entrepreneurs to build their business and gain practical experience.</p>
-//       </section>
-
-//     {/* Testimonials Section */}
-//     <div className="bg-gray-100">
-//         <h2 className="text-3xl text-black font-bold text-center mb-8">Testimonials</h2>
-//     <section className="py-16 bg-purple-700 text-white">
-//         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
-//           <div className="text-left px-8">
-//             <h3 className="text-sm uppercase mb-2">Do not take it from us</h3>
-//             <h2 className="text-4xl font-bold mb-6">Listen from our Happy Clients</h2>
-//             <div className="flex space-x-4">
-//               <button className="bg-purple-500 text-white p-3 rounded-full hover:bg-purple-600">←</button>
-//               <button className="bg-black text-white p-3 rounded-full hover:bg-gray-800">→</button>
-//             </div>
-//           </div>
-//           <div className="text-white p-8 rounded-lg shadow-lg">
-//             <div className="mb-4">
-//               <svg className="w-8 h-8 text-purple-700 mb-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-//                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 17H7v-1h4.5V9.5h-3V8h3.5v9zm7 0h-4.5v-1H16V9.5h-3V8h3.5v9z"/>
-//               </svg>
-//               <p className="text-lg">Konnect helped me a lot in finding the nearest catering business for my birthday party. The response was quick and service was top notch.</p>
-//             </div>
-//             <div className="flex items-center mt-4">
-//               <img src="https://via.placeholder.com/48" alt="User" className="w-12 h-12 rounded-full" />
-//               <div className="ml-4">
-//                 <h3 className="text-lg font-bold">Ikenna Sandra</h3>
-//                 <p className="text-sm">Student</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//       </div>
-    
-//     {/* Footer */}
-//     <footer className="bg-white text-black py-16">
-//         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
-//           <div className="text-xl font-bold">Logo</div>
-//           <ul className="flex space-x-6 justify-center md:justify-start">
-//             <li><a href="#" className="hover:text-gray-500">Link One</a></li>
-//             <li><a href="#" className="hover:text-gray-500">Link Two</a></li>
-//             <li><a href="#" className="hover:text-gray-500">Link Three</a></li>
-//             <li><a href="#" className="hover:text-gray-500">Link Four</a></li>
-//             <li><a href="#" className="hover:text-gray-500">Link Five</a></li>
-//           </ul>
-//           <div className="flex space-x-4 justify-center md:justify-end">
-//             <a href="#" className="hover:text-gray-500"><i className="fab fa-facebook"></i></a>
-//             <a href="#" className="hover:text-gray-500"><i className="fab fa-instagram"></i></a>
-//             <a href="#" className="hover:text-gray-500"><i className="fab fa-twitter"></i></a>
-//             <a href="#" className="hover:text-gray-500"><i className="fab fa-linkedin"></i></a>
-//           </div>
-//         </div>
-//         <hr className="my-8 border-gray-300" />
-//         <div className="text-center text-sm text-gray-500">
-//           2021 Relume. All rights reserved. <a href="#" className="hover:underline">Privacy Policy</a> | <a href="#" className="hover:underline">Terms of Service</a> | <a href="#" className="hover:underline">Cookie Settings</a>
-//         </div>
-//       </footer>
-//   </div>
-// );
 
 }
 

@@ -3,12 +3,9 @@ import { Outlet } from "react-router-dom"
 
 const GeneralLayout = () => {
   return (
-        <div className="min-h-screen font-montserrat flex flex-col overflow-hidden">
-          
-          <div className="flex-grow overflow-auto">
-            <Outlet />
-          </div>
-        </div>
+  <div className="min-h-screen font-montserrat flex flex-col">
+    <Outlet />
+  </div>
   )
 }
 

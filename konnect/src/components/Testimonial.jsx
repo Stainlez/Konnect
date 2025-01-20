@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import person1 from "../../src/assets/commentavatar1.png"
+import person2 from "../../src/assets/commentavatar2.png"
+import person3 from "../../src/assets/commentavatar3.png"
 
 const TestimonialsSection = () => {
   // Predefined testimonials
@@ -10,16 +13,19 @@ const TestimonialsSection = () => {
       text: "Konnect helped me a lot in finding the nearest catering business for my birthday party. The response was quick and service was top notch.",
       name: "Ikenna Sandra",
       title: "Student",
+      avatar: person1
     },
     {
       text: "The platform connected me with a reliable mechanic. I highly recommend it to everyone!",
       name: "Tunde Adewale",
       title: "Entrepreneur",
+      avatar: person2
     },
     {
       text: "I found a great tutor for my kids through Konnect. It saved me a lot of stress!",
       name: "Chioma Okafor",
       title: "Parent",
+      avatar: person3
     },
   ];
 
@@ -83,7 +89,7 @@ const TestimonialsSection = () => {
           </div>
           <div className="flex items-center mt-4">
             <img
-              src="https://via.placeholder.com/48"
+              src={testimonials[currentIndex].avatar}
               alt="User"
               className="w-12 h-12 rounded-full"
             />

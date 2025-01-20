@@ -19,7 +19,7 @@ const Home = () => {
     <div className="bg-textColor">
       <div className="p-11 space-y-11">
       <div className="space-y-2">
-      <h1 className="text-black text-nowrap pt-8 max-w-md mt-16 text-5xl font-semibold md:text-5xl">
+      <h1 className="text-black text-nowrap pt-8 max-w-md mt-16 text-4xl font-semibold md:text-5xl">
         Manage your <br />services{" "}
         <span className="text-purple-900 text-nowrap transition-transform duration-400">
           {words[index]}

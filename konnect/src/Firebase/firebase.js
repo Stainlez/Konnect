@@ -1,5 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from 'firebase/storage';
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -16,6 +19,22 @@ const firebaseConfig = {
   measurementId: "G-5R96SCSH2D"
 };
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBMGIgbEUoA_pHYgeN81wc1-B5RQ2ZViwQ",
+//   authDomain: "react-contact-58806.firebaseapp.com",
+//   projectId: "react-contact-58806",
+//   storageBucket: "react-contact-58806.appspot.com",
+//   messagingSenderId: "134105602975",
+//   appId: "1:134105602975:web:fe39989b7adf2a8359fbaa",
+//   measurementId: "G-WBJP8BP5CK"
+// };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore();
+export const storage = getStorage(app);
+
 // const analytics = getAnalytics(app);
+
+console.log("Firebase initialized:", app.name);

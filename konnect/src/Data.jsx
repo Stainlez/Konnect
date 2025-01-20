@@ -18,6 +18,13 @@ import Person7 from "./assets/Person7.png"
 import Person8 from "./assets/Person8.png"
 import Person9 from "./assets/Person9.png"
 import Person10 from "./assets/Person10.png"
+import commentavatar1 from "./assets/commentavatar1.png"
+import commentavatar2 from "./assets/commentavatar2.png"
+import commentavatar3 from "./assets/commentavatar3.png"
+import commentavatar4 from "./assets/commentavatar4.png"
+import commentavatar5 from "./assets/commentavatar5.png"
+import commentavatar6 from "./assets/commentavatar6.png"
+
 
 export const servicesData = [
     { id: 1, 
@@ -25,119 +32,380 @@ export const servicesData = [
         location: "UNN, Behind Flat", 
         category: "Beauty", 
         product: "Emmy's Touch", 
+        rating: "3.0",
         avatar: Person1, 
-        imageUrl: Services1 
+        imageUrl: [Services1, Services5, Services9],
+        contact: "07012661432",
+        services: ["Natural makeup", "Bridal makeup", "Glamorous makeup", "Prom makeup", "Bronzed Goddess glam", "Summer Glow", "Smokey Eye Look", "Winter Glam"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar1,
+                name: "Jenifer234",
+                rating: "5",
+                comment: "It was really good. Her hand is so neat and not painful. I really recommend her.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar2,
+                name: "Ebeh Adaeze",
+                rating: "5",
+                comment: "She gave me exactly what I wanted. Her customer care is top-notch. Definitely booking her again.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 2, 
         name: "Okoye Chimaobi", 
         location: "Odenigwe", 
         category: "Design", 
         product: "OC Graphics", 
         avatar: Person2, 
-        imageUrl: Services2 
+        rating: "4.0",
+        imageUrl: [Services2, Services3],
+        contact: "07012661432",
+        services: ["Murals", "Portrait painting", "Poster Design", "Digital Art Services", "Digital Art Services"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar3,
+                name: "Oluwa Micheal",
+                rating: "5",
+                comment: "I think he needs more time to learn his craft. It is obvious he oves what he does but I don’t think his prices atch his service.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar4,
+                name: "Agu Rita",
+                rating: "5",
+                comment: "I loved the flyers he designed for me. Might book him again in the future.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 3, 
         name: "Eze Ugochukwu", 
         location: "UNN, Hilltop", 
         category: "Art", 
         product: "DreamArts", 
         avatar: Person3, 
-        imageUrl: Services3 
+        rating: "5.0",
+        imageUrl: [Services3, Services2],
+        contact: "07012661432",
+        services: ["Murals", "Portrait painting", "Poster Design", "Digital Art Services", "Digital Art Services"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar3,
+                name: "Oluwa Micheal",
+                rating: "5",
+                comment: "I think he needs more time to learn his craft. It is obvious he oves what he does but I don’t think his prices atch his service.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar4,
+                name: "Agu Rita",
+                rating: "5",
+                comment: "I loved the flyers he designed for me. Might book him again in the future.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 4, 
         name: "Ndu Ijeoma", 
         location: "UNN, Behind Flat", 
         category: "Fashion", 
         product: "Cindy Couture", 
         avatar: Person4, 
-        imageUrl: Services4 
+        rating: "3.0",
+        imageUrl: [Services4, Services5],
+        contact: "07012661432",
+        services: ["Natural makeup", "Bridal makeup", "Glamorous makeup", "Prom makeup", "Bronzed Goddess glam", "Summer Glow", "Smokey Eye Look", "Winter Glam"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar1,
+                name: "Jenifer234",
+                rating: "5",
+                comment: "It was really good. Her hand is so neat and not painful. I really recommend her.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar2,
+                name: "Ebeh Adaeze",
+                rating: "5",
+                comment: "She gave me exactly what I wanted. Her customer care is top-notch. Definitely booking her again.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 5, 
         name: "Mbah Amarachi", 
         location: "Okpara Hostel", 
         category: "Beauty", 
         product: "Capture Moments", 
-        avatar: Person5, 
-        imageUrl: Services5 
+        avatar: Person5,
+        rating: "4.0", 
+        imageUrl: [Services1, Services5, Services9],
+        contact: "07012661432",
+        services: ["Natural makeup", "Bridal makeup", "Glamorous makeup", "Prom makeup", "Bronzed Goddess glam", "Summer Glow", "Smokey Eye Look", "Winter Glam"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar1,
+                name: "Jenifer234",
+                rating: "5",
+                comment: "It was really good. Her hand is so neat and not painful. I really recommend her.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar2,
+                name: "Ebeh Adaeze",
+                rating: "5",
+                comment: "She gave me exactly what I wanted. Her customer care is top-notch. Definitely booking her again.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 6, 
         name: "Enioluwa Adeola", 
         location: "UNN, Odenigbo", 
         category: "Culinary", 
         product: "Dee's Kitchen", 
         avatar: Person6, 
-        imageUrl: Services6 
+        rating: "3.0",
+        imageUrl: [Services6, Services7],
+        contact: "07012661432",
+        services: [],
+        reviews: []
     },
+
     { id: 7, 
         name: "Chike Obi", 
         location: "New Keneth Hostel", 
         category: "Culinary", 
         product: "Chi's Snacks", 
         avatar: Person7, 
-        imageUrl: Services7 
+        rating: "5.0",
+        imageUrl: [Services6, Services7],
+        contact: "07012661432",
+        services: [],
+        reviews: []
     },
+
     { id: 8, 
         name: "Ada Umeh", 
         location: "Independence", 
         category: "Tech", 
         product: "Dev Umeh", 
         avatar: Person8, 
-        imageUrl: Services8 
+        rating: "3.0",
+        imageUrl: [Services2, Services8],
+        contact: "07012661432",
+        services: ["Brand and Identity Design", "Marketing and Advertising Design", "Digital Design", "Illustration and Custom Art", "Motion Graphics and Animation"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar5,
+                name: "Okosi Ezeudo",
+                rating: "5",
+                comment: "He is good at what he does. Gets the job done on time too. I will definitely keep coming back.",
+                date: "20 Oct 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar6,
+                name: "Anomah Angel",
+                rating: "5",
+                comment: "He is very intentional with his clients. I won’t hesitate to recommend him.",
+                date: "18 Dec 2024"
+            }
+        ]
     },
+
     { id: 9, 
         name: "Ifeanyi Nwachukwu", 
         location: "Hilltop", 
         category: "Beauty", 
         product: "Nwach Touch", 
         avatar: Person9, 
-        imageUrl: Services9 
+        rating: "5.0",
+        imageUrl: [Services1, Services5, Services9],
+        contact: "07012661432",
+        services: ["Natural makeup", "Bridal makeup", "Glamorous makeup", "Prom makeup", "Bronzed Goddess glam", "Summer Glow", "Smokey Eye Look", "Winter Glam"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar1,
+                name: "Jenifer234",
+                rating: "5",
+                comment: "It was really good. Her hand is so neat and not painful. I really recommend her.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar2,
+                name: "Ebeh Adaeze",
+                rating: "5",
+                comment: "She gave me exactly what I wanted. Her customer care is top-notch. Definitely booking her again.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 10, 
         name: "Tina Okafor", 
         location: "Chisco Hostel", 
         category: "Interior-Design", 
         product: "Interior by Tina", 
-        avatar: Person10, 
-        imageUrl: Services10 
+        avatar: Person10,
+        rating: "4.0",
+        imageUrl: [Services10],
+        contact: "07012661432",
+        services: [],
+        reviews: []
     },
+
     { id: 11, 
         name: "Kachi Emeka", 
         location: "Odim Gate", 
         category: "Photography", 
         product: "Lens Kachi", 
-        avatar: Person3, 
-        imageUrl: Services1 
+        avatar: Person3,
+        rating: "4.5", 
+        imageUrl: [Services1],
+        contact: "07012661432",
+        services: ["Brand and Identity Design", "Marketing and Advertising Design", "Digital Design", "Illustration and Custom Art", "Motion Graphics and Animation"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar5,
+                name: "Okosi Ezeudo",
+                rating: "5",
+                comment: "He is good at what he does. Gets the job done on time too. I will definitely keep coming back.",
+                date: "20 Oct 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar6,
+                name: "Anomah Angel",
+                rating: "5",
+                comment: "He is very intentional with his clients. I won’t hesitate to recommend him.",
+                date: "18 Dec 2024"
+            }
+        ]
     },
+
     { id: 12, 
         name: "Emeka John", 
         location: "New Keneth", 
         category: "Art", 
         product: "John's Artworks", 
-        avatar: Person5, 
-        imageUrl: Services2 
+        avatar: Person5,
+        rating: "3.0", 
+        imageUrl: [Services3, Services2],
+        contact: "07012661432",
+        services: ["Murals", "Portrait painting", "Poster Design", "Digital Art Services", "Digital Art Services"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar3,
+                name: "Oluwa Micheal",
+                rating: "5",
+                comment: "I think he needs more time to learn his craft. It is obvious he oves what he does but I don’t think his prices atch his service.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar4,
+                name: "Agu Rita",
+                rating: "5",
+                comment: "I loved the flyers he designed for me. Might book him again in the future.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 13, 
         name: "Ngozi Chike", 
         location: "Hilltop", 
         category: "Art", 
         product: "Chike's Art", 
         avatar: Person3, 
-        imageUrl: Services3 
+        rating: "3.0",
+        imageUrl: [Services3, Services2],
+        contact: "07012661432",
+        services: ["Murals", "Portrait painting", "Poster Design", "Digital Art Services", "Digital Art Services"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar3,
+                name: "Oluwa Micheal",
+                rating: "5",
+                comment: "I think he needs more time to learn his craft. It is obvious he oves what he does but I don’t think his prices atch his service.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar4,
+                name: "Agu Rita",
+                rating: "5",
+                comment: "I loved the flyers he designed for me. Might book him again in the future.",
+                date: "4 Dec 2024"
+            }
+        ]
     },
+
     { id: 14, 
         name: "Blessing Nnamdi", 
         location: "Independence Layout", 
         category: "Culinary", 
         product: "Bless Meals", 
-        avatar: Person7, 
-        imageUrl: Services6 
+        avatar: Person7,
+        rating: "4.0", 
+        imageUrl: [Services6, Services7],
+        contact: "07012661432",
+        services: [],
+        reviews: []
     },
+
     { id: 15, 
         name: "Ogechi Uzo", 
         location: "Okpara Hostel", 
         category: "Tech", 
         product: "Dev Ogechi", 
-        avatar: Person9, 
-        imageUrl: Services8 
+        avatar: Person9,
+        rating: "5.0", 
+        imageUrl: [Services2, Services8],
+        contact: "07012661432",
+        services: ["Brand and Identity Design", "Marketing and Advertising Design", "Digital Design", "Illustration and Custom Art", "Motion Graphics and Animation"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar5,
+                name: "Okosi Ezeudo",
+                rating: "5",
+                comment: "He is good at what he does. Gets the job done on time too. I will definitely keep coming back.",
+                date: "20 Oct 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar6,
+                name: "Anomah Angel",
+                rating: "5",
+                comment: "He is very intentional with his clients. I won’t hesitate to recommend him.",
+                date: "18 Dec 2024"
+            }
+        ]
     },
   ];

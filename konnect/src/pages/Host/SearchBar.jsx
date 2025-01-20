@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom"
+// import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const SearchBar = () => {
   return (
@@ -24,11 +26,13 @@ const SearchBar = () => {
 
         {/* Avatar Icon */}
         <div className="w-8 h-8 rounded-full overflow-hidden cursor-pointer">
+          <Link to='/dashboard/profile'>
           <img
             src="https://www.w3schools.com/w3images/avatar2.png"
             alt="Avatar"
             className="w-full h-full object-cover"
-          />
+            />
+          </Link>
         </div>
       </div>
     </div>

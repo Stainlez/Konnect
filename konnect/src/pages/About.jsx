@@ -191,11 +191,11 @@ const About = () => {
                             
              <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
       {/* Logo Section */}
-      <div className="p-4 rounded-xl shadow-xl">
+      <div className="hidden md:flexp-4 rounded-xl shadow-xl">
         <img 
           src={logo2} 
           alt="logo" 
-          className="hidden md:flex max-h-20 object-contain" 
+          className=" max-h-20 object-contain" 
         />
       </div>
     

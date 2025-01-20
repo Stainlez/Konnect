@@ -11,7 +11,7 @@ import {
 import Home from "./pages/Home"
 import LandingPage from "./pages/LandingPage"
 import About from "./pages/About"
-// import Service from "./pages/Services"
+import Service from "./pages/Services"
 import Contact from "./pages/Contact"
 import Welcome from "./pages/Welcome"
 import SignIn from "./pages/Authentication/SignIn"
@@ -24,16 +24,21 @@ import Layout from "./components/Layout"
 import GeneralLayout from "./components/GeneralLayout"
 import NotFound from "./pages/NotFound"
 import Error from "./pages/Error"
-// import Sidebar from "./pages/Host/Sidebar"
+
 import Dashboard from "./pages/Host/Dashboard"
 import Profile from "./pages/Host/Profile"
 import Services from "./pages/Host/Services"
-import ServicesDetails from "./pages/Host/ServicesDetails"
+import ServicesDetails from "./pages/Host/ServicesDetail"
 import { loader as servicesLoader } from "./pages/productLoader"
-import { loader as servicesDetailLoader } from "./pages/productLoader"
+import { serviceloader as serviceLoader } from "./pages/productLoader"
+import { serviceDetailLoader as servicesDetailLoader } from "./pages/productLoader";  // For ServiceDetails page
+import { action as signupAction } from "./pages/productLoader"
+import { signinAction as loginAction } from "./pages/productLoader"
+import { messageLoader as loginMessageLoader } from "./pages/productLoader"
 // import History from "./pages/Host/History"
 import Settings from "./pages/Host/Settings"
 import HostLayout from "./components/HostLayout"
+import { requireAuth } from "./pages/Authentication/utility"
 import './App.css'
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -42,36 +47,66 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route index element={<LandingPage />} />
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} 
-            loader={servicesLoader}
-            errorElement={<Error />}
+            <Route path="services" element={<Service />} 
+              loader={serviceLoader}
+              errorElement={<Error />}
             />
+              <Route 
+                path="services/:id" 
+                element={<ServicesDetails />} 
+                errorElement={<Error />}
+                loader={servicesDetailLoader}
+              />
             <Route path="contact" element={<Contact />} />
             <Route path="welcome" element={<Welcome />} />
           </Route>
-        {/* <Route path="/host" element={<HostLayout />}>
-        </Route> */}
+        
+
           <Route path="dashboard" element={<HostLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="profile" element={<Profile />} />
+              <Route 
+                index 
+                element={<Dashboard />} 
+                loader={async ({ request }) => await requireAuth(request)}
+                errorElement={<Error />}
+                />
+              <Route 
+                path="profile" 
+                element={<Profile />} 
+                loader={async ({ request }) => await requireAuth(request)}
+                errorElement={<Error />}
+                />
               <Route path="services" element={<Services />} 
                 loader={servicesLoader}
                 errorElement={<Error />}
-              >
-                  <Route 
-                    path=":seviceId" 
-                    element={<ServicesDetails />} 
-                    // errorElement={<Error />}
-                    loader={servicesDetailLoader}
-                    // loader={async () => await requireAuth()}
-                  />
-                </Route>
+              />
+              <Route 
+                path="services/:id" 
+                element={<ServicesDetails />} 
+                errorElement={<Error />}
+                loader={servicesDetailLoader}
+              />
+                
               {/* <Route path="/dashboard/history" element={<History />} /> */}
-              <Route path="settings" element={<Settings />} />
+              <Route 
+                path="settings" 
+                element={<Settings />} 
+                loader={async ({ request }) => await requireAuth(request)}
+                />
               
           </Route>
-          <Route path="login" element={<SignIn />} />
-          <Route path="signup" element={<SignUp />} />
+          <Route 
+            path="login" 
+            element={<SignIn />}
+            action={loginAction}
+            loader={loginMessageLoader}
+            errorElement={<Error />}
+            />
+          <Route 
+          path="signup" 
+          element={<SignUp />} 
+          action={signupAction}
+          errorElement={<Error />}
+          />
           <Route path="registerentrepreneur" element={<SignUp2 />} />
           <Route path="resetpassword" element={<ResetPassword />} />
           <Route path="checkmail" element={<CheckMail />} />

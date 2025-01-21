@@ -159,7 +159,7 @@ const About = () => {
       </div>
 
       {/*Call to action*/}
-      <section className="bg-textColor relative">
+      <section className="bg-textColor relative overflow-hidden">
       <div className="flex items-center justify-center bg-gray-900 text-gray-300 h-3/4 relative z-10">
         {/* Left Content */}
         <div className="md:w-2/6 p-8 space-y-12">
@@ -191,13 +191,13 @@ const About = () => {
                             
              <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
       {/* Logo Section */}
-      <div className="hidden md:flexp-4 rounded-xl shadow-xl">
-        <img 
-          src={logo2} 
-          alt="logo" 
-          className=" max-h-20 object-contain" 
-        />
-      </div>
+        <div className="hidden md:flex p-4 rounded-xl shadow-xl">
+          <img 
+            src={logo2} 
+            alt="logo" 
+            className=" max-h-20 object-contain" 
+          />
+        </div>
     
       {/* Social Icons Section */}
       <div className="flex space-x-12 justify-center mx-auto md:justify-end">

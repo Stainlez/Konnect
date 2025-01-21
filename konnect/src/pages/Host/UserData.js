@@ -28,30 +28,8 @@ export async function userLoader({ request }) {
     if (!user) {
       throw new Error("User not found");
     }
-  
-    return user;
+// Include role information in the returned user object
+  return { ...user, role: user.role };  
+    // return user;
   }
 
-// export const userLoader = async () => {
-//   const auth = getAuth();
-//   const userId = auth.currentUser?.uid;
-// console.log(userId)
-// //   console.log(userData)
-//     if (userId) {
-//     try {
-//       const userDocRef = doc(db, "users", userId);
-//       const userDoc = await getDoc(userDocRef);
-
-//       if (userDoc.exists()) {
-//         return { user: userDoc.data() };
-//       } else {
-//         throw new Error("No user document found");
-//       }
-//     } catch (error) {
-//       console.error("Error fetching user data:", error);
-//       throw new Error("Failed to load user data");
-//     }
-//   } else {
-//     throw new Error("User not authenticated");
-//   }
-// };

@@ -118,7 +118,7 @@ export async function signinAction({ request }) {
   const formData = await request.formData();
   const email = formData.get('email');
   const password = formData.get('password');
-  const pathname = new URL(request.url).searchParams.get("redirectTo") || "/dashboard/profile";
+  const pathname = new URL(request.url).searchParams.get("redirectTo") || "/dashboard";
   console.log(pathname);
 
   try {

@@ -12,8 +12,8 @@ const Profile = ( ) => {
     const [userId, setUserId] = useState(null);
     const navigation = useNavigation();
     const isSubmitting = navigation.state === "submitting";
-   
    console.log(user)
+   
     // Function to toggle modal
     const toggleModal = () => {
       setIsModalOpen(!isModalOpen);

@@ -14,6 +14,7 @@ const Settings= () => {
           <p><strong>Name:</strong> {user.firstname}</p>
           <p><strong>Email:</strong> {user.lastname}</p>
           <p><strong>User ID:</strong> {user.id}</p>
+          <p><strong>Account type:</strong> {user.role}</p>
           {/* Display other user properties as needed */}
         </div>
       ) : (

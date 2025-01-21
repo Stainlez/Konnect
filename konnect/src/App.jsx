@@ -38,9 +38,12 @@ import { signinAction as loginAction } from "./pages/productLoader"
 import { messageLoader as loginMessageLoader } from "./pages/productLoader"
 // import History from "./pages/Host/History"
 import Settings from "./pages/Host/Settings"
+import RoleProtectedRoute from './pages/Host/RoleProtectedRoute'; // Adjust the path based on your project structure
 import HostLayout from "./components/HostLayout"
-import { requireAuth } from "./pages/Authentication/utility"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
+// import { requireAuth } from "./pages/Authentication/utility"
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<GeneralLayout />}>
@@ -70,12 +73,14 @@ const router = createBrowserRouter(createRoutesFromElements(
                 loader= {userLoader}
                 errorElement={<Error />}
                 />
-              <Route 
-                path="profile" 
-                element={<Profile />} 
-                loader= {userLoader}
-                errorElement={<Error />}
-                />
+           <Route 
+    path="profile" 
+    element={<RoleProtectedRoute allowedRoles={['entrepreneur']} />}
+    loader={userLoader}
+    errorElement={<Error />}
+  >
+    <Route index element={<Profile />} loader={userLoader} />
+  </Route>
               <Route path="services" element={<Services />} 
                 loader={servicesLoader}
                 errorElement={<Error />}
@@ -115,7 +120,7 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route path="checkmail" element={<CheckMail />} />
           <Route path="newpassword" element={<CreateNewPassword />} />
           <Route path="*" element={<NotFound />} />
-
+          <ToastContainer />
       </Route>
 
 ))

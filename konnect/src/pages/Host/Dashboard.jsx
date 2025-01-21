@@ -1,13 +1,26 @@
-// import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 // import { doc, getDoc } from 'firebase/firestore';
-import { NavLink, useLoaderData } from 'react-router-dom';
+import { NavLink, useLoaderData, useLocation } from 'react-router-dom';
 import SearchBar from './SearchBar';
 // import { auth, db } from '../../Firebase/firebase'; // Adjust the path to your firebase config
 import CircularProgressBar from './ProgressBar'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Dashboard = () => {
   const user  = useLoaderData();
-  
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if the redirect was from RoleProtectedRoute and show the toast message
+    if (location.state?.fromRoleProtectedRoute) {
+      toast.info("Become an Entrepreneur to access this feature", {
+        position: "top-center",
+        autoClose: 5000,
+        toastClassName: 'custom-toast-progress',
+      });
+    }
+  }, [location]);
 
   return (
     <div className="p-6 md:px-16 bg-textColor min-h-screen">
@@ -114,7 +127,7 @@ const Dashboard = () => {
 </div>
 
       </div>
-    
+      <ToastContainer position="top-center"/>
     </div>
   );
 };

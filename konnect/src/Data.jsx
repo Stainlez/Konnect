@@ -18,6 +18,7 @@ import Person7 from "./assets/Person7.png"
 import Person8 from "./assets/Person8.png"
 import Person9 from "./assets/Person9.png"
 import Person10 from "./assets/Person10.png"
+import jude from "./assets/judeboard.png"
 import commentavatar1 from "./assets/commentavatar1.png"
 import commentavatar2 from "./assets/commentavatar2.png"
 import commentavatar3 from "./assets/commentavatar3.png"
@@ -409,3 +410,95 @@ export const servicesData = [
         ]
     },
   ];
+
+  export const userData = [
+    { id: "rTgZJTByvya48Qh7iRs7uFtjBrm2", 
+        firstname: "Jude",
+        lastname: "Samuels",
+        email: "jude.ezeakalue.245951@unn.edu.ng",
+        role: "User", 
+        unread: 3,
+        newKonnects: 6,
+        totalKonnects: 15,
+        location: "UNN, Behind Flat", 
+        category: "Beauty",
+        occupation: "Student", 
+        product: "Emmy's Touch", 
+        rating: "3.0",
+        avatar: jude, 
+        imageUrl: [Services1, Services5, Services9],
+        contact: "07012661432",
+        services: ["Natural makeup", "Bridal makeup", "Glamorous makeup", "Prom makeup", "Bronzed Goddess glam", "Summer Glow", "Smokey Eye Look", "Winter Glam"],
+        history: [
+            {
+                id: 1,
+                avatar: commentavatar1,
+                productname: "Didi Designs",
+                category: "Fashion",
+                status: "Pending",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar2,
+                productname: "Food by Lilz",
+                category: "Food",
+                status: "Completed",
+                date: "21 Dec 2024"
+            },
+            {
+                id: 3,
+                avatar: commentavatar3,
+                productname: "Cheese Bite Feed",
+                category: "Food",
+                status: "Completed",
+                date: "23 Dec 2024"
+            },            {
+                id: 4,
+                avatar: commentavatar4,
+                productname: "Bling Up Jewelry",
+                category: "Jewelry",
+                status: "In Progress",
+                date: "4 Dec 2024"
+            }, 
+            {
+                id: 5,
+                avatar: commentavatar5,
+                productname: "Jenifer234",
+                category: "Fashion",
+                status: "Pending",
+                date: "4 Dec 2024"
+            }
+        ]
+    },
+
+    { id: 2, 
+        name: "Okoye Chimaobi", 
+        location: "Odenigwe", 
+        category: "Design", 
+        product: "OC Graphics", 
+        avatar: Person2, 
+        rating: "4.0",
+        imageUrl: [Services2, Services3],
+        contact: "07012661432",
+        services: ["Murals", "Portrait painting", "Poster Design", "Digital Art Services", "Digital Art Services"],
+        reviews: [
+            {
+                id: 1,
+                avatar: commentavatar3,
+                name: "Oluwa Micheal",
+                rating: "5",
+                comment: "I think he needs more time to learn his craft. It is obvious he oves what he does but I don’t think his prices atch his service.",
+                date: "4 Dec 2024"
+            },
+            {
+                id: 2,
+                avatar: commentavatar4,
+                name: "Agu Rita",
+                rating: "5",
+                comment: "I loved the flyers he designed for me. Might book him again in the future.",
+                date: "4 Dec 2024"
+            }
+        ]
+    }
+  ]

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../Firebase/firebase";
 import { NavLink } from 'react-router-dom';
-import home from '../../assets/homeIcon.png'
+import home from '../../assets/homeIcon1.png'
 import profile from '../../assets/profileIcon.png'
 import services from '../../assets/serviceIcon.png'
 import settings from '../../assets/settingsIcon.png'

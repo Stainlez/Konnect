@@ -1,4 +1,5 @@
 import { servicesData } from '../src/Data';
+import { userData } from "../src/Data";
 // import { users } from './Data';
 
 
@@ -7,6 +8,12 @@ import { servicesData } from '../src/Data';
 export async function getAllData() {
     return servicesData;
     // console.log(servicesData)
+}
+
+// Function to fetch user data
+export async function getUserData() {
+    // console.log(userData)
+    return userData;
 }
 
 

@@ -1,37 +1,22 @@
 import React, { useEffect,useState } from 'react';
-import { NavLink, useNavigation } from 'react-router-dom'
+import { NavLink, useNavigation, useLoaderData } from 'react-router-dom'
 import { auth, db, storage } from '../../Firebase/firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 
 
-const Profile = () => {
+const Profile = ( ) => {
     // State to control modal visibility
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [user, setUser] = useState(null);
+    const user  = useLoaderData();
     const [userId, setUserId] = useState(null);
     const navigation = useNavigation();
     const isSubmitting = navigation.state === "submitting";
    
-   
+   console.log(user)
     // Function to toggle modal
     const toggleModal = () => {
       setIsModalOpen(!isModalOpen);
-    };
-    // Function to fetch user data
-    const getUserData = async (userId) => {
-      try {
-        const userDoc = await getDoc(doc(db, "users", userId));
-        // const userSnap = await getDoc(userRef);
-        if (userDoc.exists()) {
-          setUser(userDoc.data());
-          
-        } else {
-          console.log('No such document!');
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
     };
   
 
@@ -171,7 +156,7 @@ const Profile = () => {
           const userId = auth.currentUser?.uid; // Replace with dynamic ID if needed
           if (userId) {
             setUserId(userId);
-          getUserData(userId);
+          // getUserData(userId);
           }
         }, []);
 
@@ -207,7 +192,7 @@ const Profile = () => {
         {/* Profile Picture */}
         <div className="flex ml-14 mb-6">
         <img
-            src="https://www.w3schools.com/w3images/avatar2.png"
+            src={user.avatar ? user.avatar : "https://www.w3schools.com/w3images/avatar2.png"}
             alt="Avatar"
             className="rounded-full w-32 h-32"
           />
@@ -457,5 +442,6 @@ const Profile = () => {
       </div>
   );
 };
+
 
 export default Profile;

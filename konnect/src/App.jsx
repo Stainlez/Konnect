@@ -30,6 +30,7 @@ import Profile from "./pages/Host/Profile"
 import Services from "./pages/Host/Services"
 import ServicesDetails from "./pages/Host/ServicesDetail"
 import { loader as servicesLoader } from "./pages/productLoader"
+import { userLoader as userLoader } from "./pages/Host/UserData"
 import { serviceloader as serviceLoader } from "./pages/productLoader"
 import { serviceDetailLoader as servicesDetailLoader } from "./pages/productLoader";  // For ServiceDetails page
 import { action as signupAction } from "./pages/productLoader"
@@ -66,13 +67,13 @@ const router = createBrowserRouter(createRoutesFromElements(
               <Route 
                 index 
                 element={<Dashboard />} 
-                loader={async ({ request }) => await requireAuth(request)}
+                loader= {userLoader}
                 errorElement={<Error />}
                 />
               <Route 
                 path="profile" 
                 element={<Profile />} 
-                loader={async ({ request }) => await requireAuth(request)}
+                loader= {userLoader}
                 errorElement={<Error />}
                 />
               <Route path="services" element={<Services />} 
@@ -89,8 +90,10 @@ const router = createBrowserRouter(createRoutesFromElements(
               {/* <Route path="/dashboard/history" element={<History />} /> */}
               <Route 
                 path="settings" 
-                element={<Settings />} 
-                loader={async ({ request }) => await requireAuth(request)}
+                element={<Settings />}
+                errorElement={<Error />} 
+                // loader={async ({ request }) => await requireAuth(request)}
+                loader= {userLoader}
                 />
               
           </Route>

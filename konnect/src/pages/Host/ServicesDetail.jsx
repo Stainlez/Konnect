@@ -32,13 +32,13 @@ const ServiceDetails = () => {
                 className=""
             >&larr; <span>Back to {type}</span></Link>
       {/* Service Images */}
-    <div className="flex p-1 justify-center space-x-2">
+    <div className="flex p-1 justify-center space-x-2 md:space-x-10">
       {service.imageUrl && service.imageUrl.map((image, index) => (
         <img
           key={index}
           src={image}
           alt={`${service.name} image ${index + 1}`}
-          className="rounded-lg w-36   md:w-44 md:h-48 object-cover border-2"
+          className="rounded-lg w-36   md:w-56 md:h-48 object-cover border-2"
         />
       ))}
     </div>

@@ -1,35 +1,38 @@
-import { useState } from 'react';
-import { Link, Form } from 'react-router-dom'
+import { useState } from "react";
+import { Link, Form } from "react-router-dom";
 
 function ResetPassword() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: Implement the logic to send reset password instructions
-    console.log('Sending reset instructions to:', email);
+    console.log("Sending reset instructions to:", email);
   };
 
   return (
     <div className="flex font-montserrat items-center justify-center min-h-screen bg-textColor">
-       
-
       <div className="w-full max-w-md p-8 space-y-3 bg-white rounded-lg shadow-md min-h-[400px]">
-      <Link
-        to="/login"
-        // relative="path"
-        className="back-button flex font-bold mb-auto mt-2 md:mb-auto md:mt-2" 
-      >
-        &larr; <span className='text-sm pl-1 pt-1'> Back</span>
-      </Link>
-        <h1 className="text-2xl font-bold text-center text-gray-900">Reset Password</h1>
+        <Link
+          to="/login"
+          // relative="path"
+          className="back-button flex font-bold mb-auto mt-2 md:mb-auto md:mt-2"
+        >
+          &larr; <span className="text-sm pl-1 pt-1"> Back</span>
+        </Link>
+        <h1 className="text-2xl font-bold text-center text-gray-900">
+          Reset Password
+        </h1>
         <p className="text-sm text-center text-gray-600">
-          Enter the email associated with your account and we&apos;ll
-          send an email with instructions to reset your password.
+          Enter the email associated with your account and we&apos;ll send an
+          email with instructions to reset your password.
         </p>
         <Form replace onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mt-10 text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium mt-10 text-gray-700"
+            >
               Email address
             </label>
             <input

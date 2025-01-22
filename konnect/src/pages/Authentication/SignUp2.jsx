@@ -46,7 +46,7 @@ const SignUp2 = () => {
             {/* Password input with toggle */}
             <div className="relative w-full mt-8">
               <input
-                type= "number"
+                type="number"
                 name="password"
                 placeholder="Level of Study"
                 className="w-full px-3 py-2 rounded"
@@ -63,7 +63,7 @@ const SignUp2 = () => {
             {/* Confirm password input with toggle */}
             <div className="relative w-full mt-8">
               <input
-                type= "checkbox"
+                type="checkbox"
                 name="confirmPassword"
                 placeholder="Category"
                 className="w-full px-3 py-2 rounded"
@@ -98,7 +98,7 @@ const SignUp2 = () => {
         </div>
 
         <div className="h-screen hidden md:w-5/12 md:flex">
-          <img src={signimg} alt="" className="object-cover ml-auto"/>
+          <img src={signimg} alt="" className="object-cover ml-auto" />
         </div>
       </section>
     </div>
@@ -106,5 +106,3 @@ const SignUp2 = () => {
 };
 
 export default SignUp2;
-
-

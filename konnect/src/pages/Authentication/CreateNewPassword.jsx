@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { FiEye, FiEyeOff } from 'react-icons/fi';
-
+import { useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const CreateNewPassword = () => {
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
@@ -27,48 +26,65 @@ const CreateNewPassword = () => {
             </label>
             {/* <div className="relative"> */}
             <div className="relative">
-          <input
-            type={passwordVisible ? 'text' : 'password'}
-            id="password"
-            className="w-full px-3 py-2 border rounded-md"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button
-            type="button"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2"
-            onClick={() => setPasswordVisible(!passwordVisible)}
-          >
-            {passwordVisible ? <FiEyeOff className="h-5 w-5" /> : <FiEye className="h-5 w-5" />}
-          </button>
-        </div>
-        <p className="text-sm text-gray-500 mt-1">Must be at least 8 characters</p>
-      </div>
+              <input
+                type={passwordVisible ? "text" : "password"}
+                id="password"
+                className="w-full px-3 py-2 border rounded-md"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2"
+                onClick={() => setPasswordVisible(!passwordVisible)}
+              >
+                {passwordVisible ? (
+                  <FiEyeOff className="h-5 w-5" />
+                ) : (
+                  <FiEye className="h-5 w-5" />
+                )}
+              </button>
+            </div>
+            <p className="text-sm text-gray-500 mt-1">
+              Must be at least 8 characters
+            </p>
+          </div>
 
-      <div className="mb-6">
-        <label htmlFor="confirmPassword" className="block text-gray-700 mb-2">
-          Confirm Password
-        </label>
-        <div className="relative">
-          <input
-            type={confirmPasswordVisible ? 'text' : 'password'}
-            id="confirmPassword"
-            className="w-full px-3 py-2 border rounded-md"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-          <button
-            type="button"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2"
-            onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}
-          >
-            {confirmPasswordVisible ? <FiEyeOff className="h-5 w-5" /> : <FiEye className="h-5 w-5" />}
-          </button>
-        </div>
-              
-            <p className="text-sm text-gray-500 mt-1">Both passwords must match</p>
+          <div className="mb-6">
+            <label
+              htmlFor="confirmPassword"
+              className="block text-gray-700 mb-2"
+            >
+              Confirm Password
+            </label>
+            <div className="relative">
+              <input
+                type={confirmPasswordVisible ? "text" : "password"}
+                id="confirmPassword"
+                className="w-full px-3 py-2 border rounded-md"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2"
+                onClick={() =>
+                  setConfirmPasswordVisible(!confirmPasswordVisible)
+                }
+              >
+                {confirmPasswordVisible ? (
+                  <FiEyeOff className="h-5 w-5" />
+                ) : (
+                  <FiEye className="h-5 w-5" />
+                )}
+              </button>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-1">
+              Both passwords must match
+            </p>
           </div>
           <button
             type="submit"

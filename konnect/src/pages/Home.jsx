@@ -14,19 +14,20 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, [words.length]);
-  
+
   return (
     <div className="bg-textColor">
       <div className="p-11 space-y-11">
-      <div className="space-y-2">
-      <h1 className="text-black text-nowrap pt-8 max-w-md mt-16 text-4xl font-semibold md:text-5xl">
-        Manage your <br />services{" "}
-        <span className="text-purple-900 text-nowrap transition-transform duration-400">
-          {words[index]}
-        </span>
-      </h1>
-      <p className="">Find the entrepreneurial services nearest to you.</p>
-    </div>
+        <div className="space-y-2">
+          <h1 className="text-black text-nowrap pt-8 max-w-md mt-16 text-4xl font-semibold md:text-5xl">
+            Manage your <br />
+            services{" "}
+            <span className="text-purple-900 text-nowrap transition-transform duration-400">
+              {words[index]}
+            </span>
+          </h1>
+          <p className="">Find the entrepreneurial services nearest to you.</p>
+        </div>
         <div className="mt-2">
           <NavLink
             to="/welcome"
@@ -44,7 +45,9 @@ const Home = () => {
         {/* flex container */}
         <div className="flex items-center bg-purple-900 justify-around p-2">
           <div className="container bg-purple-900 flex flex-col p-8 space-y-0">
-            <h3 className="text-textColor text-3xl md:text-3xl lg:text-5xl font-bold">WHAT WE DO?</h3>
+            <h3 className="text-textColor text-3xl md:text-3xl lg:text-5xl font-bold">
+              WHAT WE DO?
+            </h3>
             <h1 className="text-textColor pt-5 max-w-md text-2xl font-bold bg-purple-900">
               Connect with student entrepreneurs to meet your desired needs.
             </h1>

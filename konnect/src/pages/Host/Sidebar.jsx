@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../Firebase/firebase";
-import { NavLink } from 'react-router-dom';
-import home from '../../assets/homeIcon1.png'
-import profile from '../../assets/profileIcon.png'
-import services from '../../assets/serviceIcon.png'
-import settings from '../../assets/settingsIcon.png'
-import logout from '../../assets/logoutIcon.png'
-import logo from '../../assets/logo.jpg'
+import { NavLink } from "react-router-dom";
+import home from "../../assets/homeIcon1.png";
+import profile from "../../assets/profileIcon.png";
+import services from "../../assets/serviceIcon.png";
+import settings from "../../assets/settingsIcon.png";
+import logout from "../../assets/logoutIcon.png";
+import logo from "../../assets/logo.jpg";
 
 const DesktopSidebar = ({ user }) => {
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
@@ -17,10 +17,7 @@ const DesktopSidebar = ({ user }) => {
     color: "#00C2AA",
   };
 
-  
   const handleLogout = async () => {
-    
-  
     try {
       await signOut(auth);
       console.log("User logged out successfully");
@@ -32,92 +29,81 @@ const DesktopSidebar = ({ user }) => {
   };
 
   return (
-    <div className="bg-black hidden text-white w-64 h-screen fixed top-0 left-0 flex-col p-6 space-y-4 md:block z-40"> {/* Always visible on desktop */}
+    <div className="bg-black hidden text-white w-64 h-screen fixed top-0 left-0 flex-col p-6 space-y-4 md:block z-40">
+      {" "}
+      {/* Always visible on desktop */}
       {/* <h1 className="text-2xl font-bold">KONNECT</h1> */}
-
       <div className="p-4 ml-9 mx-auto rounded-2xl shadow-xl">
-          <img 
-            src={logo} 
-            alt="logo" 
-            className="md:flex max-h-20 object-contain" 
-          />
-        </div>
-
-
+        <img
+          src={logo}
+          alt="logo"
+          className="md:flex max-h-20 object-contain"
+        />
+      </div>
       <nav className="space-y-2">
-        {user.role === "user" ?
-        <NavLink to="."
-        end 
-        className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
-        style={({isActive}) => isActive ? activeStyles : null}
-        >
-        <div className="w-4 h-4 overflow-hidden cursor-pointer">
-          <img
-            src={home}
-            alt="Avatar"
-            className="object-cover"
-          />
-        </div> <span className='text-sm'>Dashboard</span>
-        </NavLink>
-      :
-      <NavLink to="entrepreneur"
-        end 
-        className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
-        style={({isActive}) => isActive ? activeStyles : null}
-        >
-        <div className="w-4 h-4 overflow-hidden cursor-pointer">
-          <img
-            src={home}
-            alt="Avatar"
-            className="object-cover"
-          />
-        </div> <span className='text-sm'>Dashboard</span>
-        </NavLink>  
-      }
+        {user.role === "user" ? (
+          <NavLink
+            to="."
+            end
+            className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
+            style={({ isActive }) => (isActive ? activeStyles : null)}
+          >
+            <div className="w-4 h-4 overflow-hidden cursor-pointer">
+              <img src={home} alt="Avatar" className="object-cover" />
+            </div>{" "}
+            <span className="text-sm">Dashboard</span>
+          </NavLink>
+        ) : (
+          <NavLink
+            to="entrepreneur"
+            end
+            className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
+            style={({ isActive }) => (isActive ? activeStyles : null)}
+          >
+            <div className="w-4 h-4 overflow-hidden cursor-pointer">
+              <img src={home} alt="Avatar" className="object-cover" />
+            </div>{" "}
+            <span className="text-sm">Dashboard</span>
+          </NavLink>
+        )}
 
-        <NavLink to="profile" 
-        className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
-        style={({isActive}) => isActive ? activeStyles : null}
-        >
-        <div className="w-4 h-4 overflow-hidden cursor-pointer">
-          <img
-            src={profile}
-            alt="Avatar"
-            className="object-cover"
-          />
-        </div> <span className='text-sm'>Profile</span>
-        </NavLink>
-
-        <NavLink to="services" 
-        className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
-        style={({isActive}) => isActive ? activeStyles : null}
+        <NavLink
+          to="profile"
+          className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
+          style={({ isActive }) => (isActive ? activeStyles : null)}
         >
           <div className="w-4 h-4 overflow-hidden cursor-pointer">
-            <img
-              src={services}
-              alt="Avatar"
-              className="object-cover"
-            />
-          </div> <span className='text-sm'>Services</span>
+            <img src={profile} alt="Avatar" className="object-cover" />
+          </div>{" "}
+          <span className="text-sm">Profile</span>
+        </NavLink>
+
+        <NavLink
+          to="services"
+          className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
+          style={({ isActive }) => (isActive ? activeStyles : null)}
+        >
+          <div className="w-4 h-4 overflow-hidden cursor-pointer">
+            <img src={services} alt="Avatar" className="object-cover" />
+          </div>{" "}
+          <span className="text-sm">Services</span>
         </NavLink>
 
         {/* <NavLink to="history" className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" style={({isActive}) => isActive ? activeStyles : null}>
           History
         </NavLink> */}
-        <NavLink to="settings" 
-        className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
-        style={({isActive}) => isActive ? activeStyles : null}
+        <NavLink
+          to="settings"
+          className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700"
+          style={({ isActive }) => (isActive ? activeStyles : null)}
         >
-        <div className="w-4 h-4 overflow-hidden cursor-pointer">
-          <img
-            src={settings}
-            alt="Avatar"
-            className="object-cover"
-          />
-        </div> <span className='text-sm'>Settings</span>
+          <div className="w-4 h-4 overflow-hidden cursor-pointer">
+            <img src={settings} alt="Avatar" className="object-cover" />
+          </div>{" "}
+          <span className="text-sm">Settings</span>
         </NavLink>
 
-          {/* Logout Button with Modal */}
+        {/* Logout Button with Modal */}
         <button
           onClick={() => setIsLogoutModalOpen(true)}
           className="flex w-full space-x-4 py-4 px-4 rounded hover:bg-gray-700"
@@ -141,13 +127,13 @@ const DesktopSidebar = ({ user }) => {
         </div> <span className='text-sm'>Logout</span>
         </NavLink> */}
       </nav>
-
-
       {/* Logout Confirmation Modal */}
       {isLogoutModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded shadow-lg w-96">
-            <h2 className="text-lg text-black font-semibold mb-4">Confirm Logout</h2>
+            <h2 className="text-lg text-black font-semibold mb-4">
+              Confirm Logout
+            </h2>
             <p className="mb-6 text-black">Are you sure you want to log out?</p>
             <div className="flex justify-end space-x-4">
               <button
@@ -169,15 +155,11 @@ const DesktopSidebar = ({ user }) => {
           </div>
         </div>
       )}
-
     </div>
   );
 };
 
-
-
 export default DesktopSidebar;
-
 
 // import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
@@ -296,7 +278,6 @@ export default DesktopSidebar;
 
 // // const Sidebar = () => {
 // //     return (
-
 
 // //       // <div className="bg-black text-textColor w-64 h-screen fixed top-0 left-0 flex flex-col p-6 space-y-4">
 // //       //   <h1 className="text-2xl font-bold">KONNECT</h1>

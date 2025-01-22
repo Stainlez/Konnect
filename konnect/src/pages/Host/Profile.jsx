@@ -1,64 +1,67 @@
-import React, { useEffect,useState } from 'react';
-import { NavLink, useNavigation, useLoaderData } from 'react-router-dom'
-import { auth, db, storage } from '../../Firebase/firebase';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
-import edit from "../../assets/edit.png"
+import React, { useEffect, useState } from "react";
+import { NavLink, useNavigation, useLoaderData } from "react-router-dom";
+import { auth, db, storage } from "../../Firebase/firebase";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+} from "firebase/storage";
+import edit from "../../assets/edit.png";
 
-const Profile = ( ) => {
-    // State to control modal visibility
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const user  = useLoaderData();
-    const [userId, setUserId] = useState(null);
-    const navigation = useNavigation();
-    const isSubmitting = navigation.state === "submitting";
-   console.log(user)
-   
-    // Function to toggle modal
-    const toggleModal = () => {
-      setIsModalOpen(!isModalOpen);
-    };
-  
+const Profile = () => {
+  // State to control modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const user = useLoaderData();
+  const [userId, setUserId] = useState(null);
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
+  console.log(user);
 
+  // Function to toggle modal
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
-    const [formData, setFormData] = useState({
-      firstname: "",
-      lastname: "",
-      contact: "",
-      occupation: "",
-    });
-  
-    // Handle form input changes
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-  
-    // Function to update user data in Firebase
-    const updateUserData = async (e) => {
-      e.preventDefault();
-      
-  // Check if all fields are filled
-  const { firstname, lastname, contact, occupation } = formData;
-  if (!firstname || !lastname || !contact || !occupation) {
-    alert("Please fill out all fields before saving.");
-    return;
-  }
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    contact: "",
+    occupation: "",
+  });
 
-      if (!userId) return alert("User not found!");
-  
-      try {
-        const userRef = doc(db, "users", userId);
-        await updateDoc(userRef, formData);
-        alert("User data updated successfully!");
-        toggleModal(); // Close modal after update
-        window.location.reload(); // Refresh the page after success
-      } catch (error) {
-        console.error("Error updating user data:", error);
-        alert("Failed to update user data.");
-      }
-    };
+  // Handle form input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    const [isEditing, setIsEditing] = useState(false);
+  // Function to update user data in Firebase
+  const updateUserData = async (e) => {
+    e.preventDefault();
+
+    // Check if all fields are filled
+    const { firstname, lastname, contact, occupation } = formData;
+    if (!firstname || !lastname || !contact || !occupation) {
+      alert("Please fill out all fields before saving.");
+      return;
+    }
+
+    if (!userId) return alert("User not found!");
+
+    try {
+      const userRef = doc(db, "users", userId);
+      await updateDoc(userRef, formData);
+      alert("User data updated successfully!");
+      toggleModal(); // Close modal after update
+      window.location.reload(); // Refresh the page after success
+    } catch (error) {
+      console.error("Error updating user data:", error);
+      alert("Failed to update user data.");
+    }
+  };
+
+  const [isEditing, setIsEditing] = useState(false);
   const [profilePic, setProfilePic] = useState({ photo: null });
   const [previewUrl, setPreviewUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -76,7 +79,7 @@ const Profile = ( ) => {
       setPreviewUrl(preview); // Set the preview URL in state
     }
   };
-  
+
   useEffect(() => {
     return () => {
       if (previewUrl) {
@@ -117,15 +120,15 @@ const Profile = ( ) => {
       const userDoc = doc(db, "users", userId);
       const userSnapshot = await getDoc(userDoc);
       const oldPhotoUrl = userSnapshot.data()?.profilePicUrl;
-  
+
       // Delete the old photo if it exists
       if (oldPhotoUrl) {
         const oldPhotoRef = ref(storage, oldPhotoUrl);
         await deleteObject(oldPhotoRef);
       }
-  
+
       let photoUrl = oldPhotoUrl;
-  
+
       // Upload the new photo
       if (profilePic.photo) {
         // ref(storage, photos/${formData.photo.name});
@@ -134,7 +137,7 @@ const Profile = ( ) => {
         await uploadBytes(photoRef, profilePic.photo);
         photoUrl = await getDownloadURL(photoRef);
       }
-  
+
       // Update Firestore document
       await updateDoc(userDoc, { profilePicUrl: photoUrl });
       alert("Profile picture updated successfully!");
@@ -151,80 +154,85 @@ const Profile = ( ) => {
     setProfilePic(null);
   };
 
-        // Fetch the user data when the component mounts
-        useEffect(() => {
-          const userId = auth.currentUser?.uid; // Replace with dynamic ID if needed
-          if (userId) {
-            setUserId(userId);
-          // getUserData(userId);
-          }
-        }, []);
-
+  // Fetch the user data when the component mounts
+  useEffect(() => {
+    const userId = auth.currentUser?.uid; // Replace with dynamic ID if needed
+    if (userId) {
+      setUserId(userId);
+      // getUserData(userId);
+    }
+  }, []);
 
   return (
-    
-      <div className="bg-textColor h-screen md:p-8 w-full">
-      <div className="hidden md:flex border-b-2 justify-between items-center p-4  border-b-gray-400"> 
-      {/* Header Bar */}
+    <div className="bg-textColor h-screen md:p-8 w-full">
+      <div className="hidden md:flex border-b-2 justify-between items-center p-4  border-b-gray-400">
+        {/* Header Bar */}
         {/* Header Section */}
-        
-          <div className='ml-auto'>
+
+        <div className="ml-auto">
           <button
-              onClick={toggleModal}
-              className="bg-highlight px-3 py-2 rounded-md mr-2 hover:bg-green-600"
-            >
-              Update Profile
-            </button>
-            {/* <button className="bg-textColor text-gray-700 px-3 py-2 rounded-md hover:bg-gray-400">Cancel</button> */}
-          </div>
-
+            onClick={toggleModal}
+            className="bg-highlight px-3 py-2 rounded-md mr-2 hover:bg-green-600"
+          >
+            Update Profile
+          </button>
+          {/* <button className="bg-textColor text-gray-700 px-3 py-2 rounded-md hover:bg-gray-400">Cancel</button> */}
+        </div>
       </div>
-    <div className='px-12'>
-        <div className='flex p-5 text-center items-center'>
-              <h2 className="text-3xl text-center font-bold">Personal Info</h2>
-                     {user.role === "User" &&  <NavLink
-                          to="/registerentrepreneur"
-                          className="py-2 md:p-4 md:px-3 font-bold ml-auto text-sm text-center bg-highlight rounded-lg hover:bg-green-600"
-                        >Become an Entrepreneur</NavLink>}
-              </div>
-
+      <div className="px-12">
+        <div className="flex p-5 text-center items-center">
+          <h2 className="text-3xl text-center font-bold">Personal Info</h2>
+          {user.role === "User" && (
+            <NavLink
+              to="/registerentrepreneur"
+              className="py-2 md:p-4 md:px-3 font-bold ml-auto text-sm text-center bg-highlight rounded-lg hover:bg-green-600"
+            >
+              Become an Entrepreneur
+            </NavLink>
+          )}
+        </div>
 
         {/* Profile Picture */}
         <div className="flex ml-14 mb-6">
-        <img
-            src={user.avatar ? user.avatar : "https://www.w3schools.com/w3images/avatar2.png"}
+          <img
+            src={
+              user.avatar
+                ? user.avatar
+                : "https://www.w3schools.com/w3images/avatar2.png"
+            }
             alt="Avatar"
             className="rounded-full w-32 h-32"
           />
-        <div className='md:hidden ml-auto m-auto'>
-          <button
+          <div className="md:hidden ml-auto m-auto">
+            <button
               onClick={toggleModal}
               className="bg-highlight text-sm font-bold px-3 py-2 rounded-md mr-2 hover:bg-green-600"
             >
               Update Profile
             </button>
-            </div>
+          </div>
         </div>
-      
 
         {/* Form Section */}
-        <form className='border-y-2 justify-between items-center border-gray-400'>
+        <form className="border-y-2 justify-between items-center border-gray-400">
           {/* Name */}
           <div className="flex py-5 items-center border-b-2 border-gray-400">
-            <label className="flex flex-start text-sm font-medium text-gray-700">Name</label>
+            <label className="flex flex-start text-sm font-medium text-gray-700">
+              Name
+            </label>
             <div className="w-2/3 flex ml-auto gap-4 ">
               <input
                 type="text"
                 className="w-full p-2 border text-xs md:text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 placeholder="First Name"
-                value={user ? `${user.firstname}` : ''}
+                value={user ? `${user.firstname}` : ""}
                 readOnly
               />
               <input
                 type="text"
                 className="w-full p-2 border text-xs md:text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                 placeholder="Last Name"
-                value={user ? `${user.lastname}` : ''}
+                value={user ? `${user.lastname}` : ""}
                 readOnly
               />
             </div>
@@ -232,46 +240,51 @@ const Profile = ( ) => {
 
           {/* Email */}
           <div className="flex py-5 items-center border-b-2 border-gray-400">
-            <label className="block text-sm font-medium text-gray-700">Email Address</label>
-          <div className="w-2/3 flex ml-auto gap-4 ">
-            <input
-              type="email"
-              className="w-full p-2 text-xs md:text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder='jazzyokorie@gmail.com'
-              value={user ? `${user.email}` : ''}
-              readOnly
-            />
-          </div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email Address
+            </label>
+            <div className="w-2/3 flex ml-auto gap-4 ">
+              <input
+                type="email"
+                className="w-full p-2 text-xs md:text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="jazzyokorie@gmail.com"
+                value={user ? `${user.email}` : ""}
+                readOnly
+              />
+            </div>
           </div>
 
           {/* Phone Number */}
           <div className="flex  py-5 items-center border-b-2 border-gray-400">
-            <label className="block text-sm font-medium text-gray-700">Phone Number</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Phone Number
+            </label>
             <div className="w-2/3 flex ml-auto gap-4 ">
-            <input
-              type="tel"
-              className="w-full p-2 border text-xs md:text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder='+2348023475630'
-              value={user ? `${user.contact}` : ''}
-              readOnly
-            />
-          </div>
+              <input
+                type="tel"
+                className="w-full p-2 border text-xs md:text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="+2348023475630"
+                value={user ? `${user.contact}` : ""}
+                readOnly
+              />
+            </div>
           </div>
 
           {/* Occupation */}
           <div className="flex py-5 items-center">
-            <label className="block text-sm font-medium text-gray-700">Occupation</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Occupation
+            </label>
             <div className="w-2/3 flex ml-auto gap-4 ">
-            <input
-              type="text"
-              className="w-full p-2 border text-xs md:text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder='Student'
-              value={user ? `${user.occupation}` : ''}
-              readOnly
-            />
+              <input
+                type="text"
+                className="w-full p-2 border text-xs md:text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Student"
+                value={user ? `${user.occupation}` : ""}
+                readOnly
+              />
+            </div>
           </div>
-          </div>
-
         </form>
       </div>
 
@@ -282,24 +295,24 @@ const Profile = ( ) => {
             {/* Header Bar */}
             <div className="mb-5 flex justify-between items-center ">
               <div className="ml-auto">
-              {/* Submit Button */}
-        {isSubmitting ? (
-        <button
-          type="button"
-          disabled
-          className="px-4 py-2 rounded-md mr-2 bg-gray-400 text-black"
-          >
-          Saving...
-        </button>
-      ) : (
-        <button
-        type="submit"
-        onClick={updateUserData}
-          className="px-4 py-2 rounded-md mr-2 bg-green-500 text-white hover:bg-green-600"
-        >
-          Save Edit
-        </button>
-      )}
+                {/* Submit Button */}
+                {isSubmitting ? (
+                  <button
+                    type="button"
+                    disabled
+                    className="px-4 py-2 rounded-md mr-2 bg-gray-400 text-black"
+                  >
+                    Saving...
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    onClick={updateUserData}
+                    className="px-4 py-2 rounded-md mr-2 bg-green-500 text-white hover:bg-green-600"
+                  >
+                    Save Edit
+                  </button>
+                )}
                 <button
                   onClick={toggleModal}
                   className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400"
@@ -313,61 +326,67 @@ const Profile = ( ) => {
             <h2 className="text-2xl font-bold">Edit Your Profile</h2>
             <div className="relative w-32 h-32 m-auto flex items-center justify-center my-6">
               <div>
-              <img
-                src={previewUrl || "https://www.w3schools.com/w3images/avatar2.png"}
-                alt="Profile"
-                className="rounded-full w-32 h-32"
-              />
-              
-              <span className="absolute bottom-1 right-2 w-9 h-9 bg-green-500 text-white text-sm p-3 rounded-full shadow-md">
+                <img
+                  src={
+                    previewUrl ||
+                    "https://www.w3schools.com/w3images/avatar2.png"
+                  }
+                  alt="Profile"
+                  className="rounded-full w-32 h-32"
+                />
+
+                <span className="absolute bottom-1 right-2 w-9 h-9 bg-green-500 text-white text-sm p-3 rounded-full shadow-md">
                   {/* Edit Button */}
-        <button
-          onClick={() => setIsEditing(!isEditing)}
-          className="absolute bottom-0 right-0 text-white p-2 rounded-full shadow-md hover:bg-green-600 focus:outline-none"
-        >
-          <img src={edit} alt="edit" className="w-6"/>
-        </button>
-              </span>
+                  <button
+                    onClick={() => setIsEditing(!isEditing)}
+                    className="absolute bottom-0 right-0 text-white p-2 rounded-full shadow-md hover:bg-green-600 focus:outline-none"
+                  >
+                    <img src={edit} alt="edit" className="w-6" />
+                  </button>
+                </span>
               </div>
-           
             </div>
             {isEditing && (
-              <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center'>
-
-        <form onSubmit={handleProfilePicSubmit} className="mt-4  rounded-md">
-          <label className="block text-xl font-extrabold text-gray-700 mb-2">
-            Upload Profile Picture
-          </label>
-          <input
-            type="file"
-            onChange={handleFileChange}
-            accept="image/*"
-            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
-          />
-          <div className='space-x-4'>
-          <button
-            type="submit"
-            className="mt-4 w-2/5 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600"
-          >
-            Save
-          </button>
-          <button
-              type="button"
-              onClick={handleCancel}
-              className="bg-gray-300 w-2/5 text-white py-2 px-4 rounded-lg hover:bg-gray-400"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-        </div>
-      )}
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <form
+                  onSubmit={handleProfilePicSubmit}
+                  className="mt-4  rounded-md"
+                >
+                  <label className="block text-xl font-extrabold text-gray-700 mb-2">
+                    Upload Profile Picture
+                  </label>
+                  <input
+                    type="file"
+                    onChange={handleFileChange}
+                    accept="image/*"
+                    className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none"
+                  />
+                  <div className="space-x-4">
+                    <button
+                      type="submit"
+                      className="mt-4 w-2/5 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600"
+                    >
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleCancel}
+                      className="bg-gray-300 w-2/5 text-white py-2 px-4 rounded-lg hover:bg-gray-400"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
 
             {/* Form Section */}
             <form className="border-y-2 border-gray-400">
               {/* Name */}
               <div className="flex py-5 items-center border-b-2 border-gray-400">
-                <label className="flex text-sm font-medium text-gray-700">Name</label>
+                <label className="flex text-sm font-medium text-gray-700">
+                  Name
+                </label>
                 <div className="w-2/3 flex ml-auto gap-4">
                   <input
                     type="text"
@@ -392,13 +411,15 @@ const Profile = ( ) => {
 
               {/* Email */}
               <div className="flex py-5 items-center border-b-2 border-gray-400">
-                <label className="block text-sm font-medium text-gray-700">Email Address</label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Email Address
+                </label>
                 <div className="w-2/3 flex ml-auto gap-4">
                   <input
                     type="email"
                     className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                     placeholder="jazzyokorie@gmail.com"
-                    value={user ? `${user.email}` : ''}
+                    value={user ? `${user.email}` : ""}
                     readOnly
                   />
                 </div>
@@ -406,7 +427,9 @@ const Profile = ( ) => {
 
               {/* Phone Number */}
               <div className="flex py-5 items-center border-b-2 border-gray-400">
-                <label className="block text-sm font-medium text-gray-700">Phone Number</label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Phone Number
+                </label>
                 <div className="w-2/3 flex ml-auto gap-4">
                   <input
                     type="tel"
@@ -423,7 +446,9 @@ const Profile = ( ) => {
 
               {/* Occupation */}
               <div className="flex py-5 items-center">
-                <label className="block text-sm font-medium text-gray-700">Occupation</label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Occupation
+                </label>
                 <div className="w-2/3 flex ml-auto gap-4">
                   <input
                     type="text"
@@ -440,9 +465,8 @@ const Profile = ( ) => {
           </div>
         </div>
       )}
-      </div>
+    </div>
   );
 };
-
 
 export default Profile;

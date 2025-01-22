@@ -416,7 +416,7 @@ export const servicesData = [
         firstname: "Jude",
         lastname: "Samuels",
         email: "jude.ezeakalue.245951@unn.edu.ng",
-        role: "user", 
+        role: "User", //Entrepreneur
         unread: 3,
         newKonnects: 6,
         totalKonnects: 15,

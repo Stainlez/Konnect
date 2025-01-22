@@ -3,7 +3,7 @@ import { NavLink, useNavigation, useLoaderData } from 'react-router-dom'
 import { auth, db, storage } from '../../Firebase/firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
-
+import edit from "../../assets/edit.png"
 
 const Profile = ( ) => {
     // State to control modal visibility
@@ -182,10 +182,10 @@ const Profile = ( ) => {
     <div className='px-12'>
         <div className='flex p-5 text-center items-center'>
               <h2 className="text-3xl text-center font-bold">Personal Info</h2>
-                        <NavLink
+                     {user.role === "User" &&  <NavLink
                           to="/registerentrepreneur"
                           className="py-2 md:p-4 md:px-3 font-bold ml-auto text-sm text-center bg-highlight rounded-lg hover:bg-green-600"
-                        >Become an Entrepreneur</NavLink>
+                        >Become an Entrepreneur</NavLink>}
               </div>
 
 
@@ -318,13 +318,14 @@ const Profile = ( ) => {
                 alt="Profile"
                 className="rounded-full w-32 h-32"
               />
-              <span className="absolute bottom-2 right-2 bg-green-500 text-white text-sm px-2 py-1 rounded-md shadow-md">
+              
+              <span className="absolute bottom-1 right-2 w-9 h-9 bg-green-500 text-white text-sm p-3 rounded-full shadow-md">
                   {/* Edit Button */}
         <button
           onClick={() => setIsEditing(!isEditing)}
-          className="absolute bottom-0 right-0 bg-blue-500 text-white p-2 rounded-full shadow-md hover:bg-blue-600 focus:outline-none"
+          className="absolute bottom-0 right-0 text-white p-2 rounded-full shadow-md hover:bg-green-600 focus:outline-none"
         >
-          Edit
+          <img src={edit} alt="edit" className="w-6"/>
         </button>
               </span>
               </div>

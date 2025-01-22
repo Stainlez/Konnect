@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Landing1 from "../assets/Landing1.png"
-import Landing2 from "../assets/Landing2.png"
-import Landing3 from "../assets/Landing3.png"
+import Landing1 from "../assets/Landing1.jpg"
+import Landing2 from "../assets/tailor.webp"
+import Landing3 from "../assets/hair5.jpg"
 import Landing4 from "../assets/Landing4.png"
 import Landing5 from "../assets/Landing5.png"
 

@@ -10,7 +10,7 @@ import settings from '../../assets/settingsIcon.png'
 import logout from '../../assets/logoutIcon.png'
 import logo from '../../assets/logo.jpg'
 
-const MobileSidebar = ({ isOpen, toggleSidebar }) => {
+const MobileSidebar = ({ isOpen, toggleSidebar, user }) => {
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
   const activeStyles = {
@@ -45,7 +45,21 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
         </div>
 
       <nav className="space-y-2">
-        <NavLink to="." end
+        {user.role === "user" ?
+          <NavLink to="." end
+          className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}
+          style={({isActive}) => isActive ? activeStyles : null}
+          >
+          <div className="w-4 h-4 overflow-hidden cursor-pointer">
+            <img
+              src={home}
+              alt="Avatar"
+              className="object-cover"
+            />
+          </div> <span className='text-sm'>Dashboard</span>
+          </NavLink>
+        :
+        <NavLink to="entrepreneur"
         className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}
         style={({isActive}) => isActive ? activeStyles : null}
         >
@@ -57,6 +71,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar }) => {
           />
         </div> <span className='text-sm'>Dashboard</span>
         </NavLink>
+        }
         
         <NavLink to="profile" 
         className="flex space-x-4 py-4 px-4 rounded hover:bg-gray-700" onClick={toggleSidebar}

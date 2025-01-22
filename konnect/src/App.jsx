@@ -26,6 +26,7 @@ import NotFound from "./pages/NotFound"
 import Error from "./pages/Error"
 
 import Dashboard from "./pages/Host/Dashboard"
+import EntrepDashboard from "./pages/Entrepreneur/EntrepDashboard"
 import Profile from "./pages/Host/Profile"
 import Services from "./pages/Host/Services"
 import ServicesDetails from "./pages/Host/ServicesDetail"
@@ -38,9 +39,13 @@ import { signinAction as loginAction } from "./pages/productLoader"
 import { messageLoader as loginMessageLoader } from "./pages/productLoader"
 // import History from "./pages/Host/History"
 import Settings from "./pages/Host/Settings"
+import NotificationPage from "./pages/Host/NotificationPage"
+import AnnouncementTab from "./pages/Host/AnnouncementTab"
+import Accounttype from "./pages/Host/Accounttype"
 import RoleProtectedRoute from './pages/Host/RoleProtectedRoute'; // Adjust the path based on your project structure
 import HostLayout from "./components/HostLayout"
-import { ToastContainer, toast } from 'react-toastify';
+
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 // import { requireAuth } from "./pages/Authentication/utility"
@@ -65,22 +70,31 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path="welcome" element={<Welcome />} />
           </Route>
         
-
-          <Route path="dashboard" element={<HostLayout />}>
+        
+          
+          <Route path="dashboard" element={<HostLayout />} loader= {userLoader}>
               <Route 
                 index 
                 element={<Dashboard />} 
                 loader= {userLoader}
                 errorElement={<Error />}
                 />
-           <Route 
-    path="profile" 
-    element={<RoleProtectedRoute allowedRoles={['entrepreneur']} />}
-    loader={userLoader}
-    errorElement={<Error />}
-  >
-    <Route index element={<Profile />} loader={userLoader} />
-  </Route>
+            <Route 
+              path="entrepreneur" 
+              element={<RoleProtectedRoute allowedRoles={['Entrepreneur']} />}
+              loader={userLoader}
+              errorElement={<Error />}
+              >
+                <Route 
+                  index 
+                  element={<EntrepDashboard />} 
+                  loader={userLoader} 
+                  errorElement={<Error />}
+                />
+            </Route>
+
+            <Route path="profile" element={<Profile />} loader={userLoader} errorElement={<Error />}/>
+              
               <Route path="services" element={<Services />} 
                 loader={servicesLoader}
                 errorElement={<Error />}
@@ -92,13 +106,29 @@ const router = createBrowserRouter(createRoutesFromElements(
                 loader={servicesDetailLoader}
               />
                 
-              {/* <Route path="/dashboard/history" element={<History />} /> */}
+              {/* <Route path="history" element={<History />} /> */}
               <Route 
                 path="settings" 
                 element={<Settings />}
                 errorElement={<Error />} 
                 // loader={async ({ request }) => await requireAuth(request)}
                 loader= {userLoader}
+                />
+
+                <Route path="notification" 
+                element={<NotificationPage />} 
+                loader= {userLoader}
+                errorElement={<Error />} 
+                />
+                <Route path="notification/announcement" 
+                element={<AnnouncementTab />} 
+                loader= {userLoader}
+                errorElement={<Error />} 
+                />
+                <Route path="settings/account-type" 
+                element={<Accounttype />} 
+                loader= {userLoader}
+                errorElement={<Error />} 
                 />
               
           </Route>
@@ -120,7 +150,7 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route path="checkmail" element={<CheckMail />} />
           <Route path="newpassword" element={<CreateNewPassword />} />
           <Route path="*" element={<NotFound />} />
-          <ToastContainer />
+          {/* <ToastContainer /> */}
       </Route>
 
 ))

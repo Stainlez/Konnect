@@ -176,7 +176,7 @@ Business has been booming as well.</p>
 
           <hr className="my-8 border-gray-300" />
           <div className="text-center text-sm text-gray-500">
-            2024 Relume. All rights reserved. <a href="#" className="hover:underline">Privacy Policy</a> | <a href="#" className="hover:underline">Terms of Service</a> | <a href="#" className="hover:underline">Cookie Settings</a>
+            2025 Relume. All rights reserved. <a href="#" className="hover:underline">Privacy Policy</a> | <a href="#" className="hover:underline">Terms of Service</a> | <a href="#" className="hover:underline">Cookie Settings</a>
           </div>
         </footer>
     </div>

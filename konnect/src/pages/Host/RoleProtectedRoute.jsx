@@ -1,21 +1,21 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes
 import { Navigate, Outlet, useLoaderData } from 'react-router-dom';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 const RoleProtectedRoute = ({ allowedRoles }) => {
     const user = useLoaderData();
 
-    useEffect(() => {
-      if (user && !allowedRoles.includes(user.role)) {
-        toast.info("Become an Entrepreneur to access this feature", {
-            position: "top-center",  // Customize the position for this toast
-        autoClose: 5000,         // Auto close after 5 seconds
-        pauseOnHover: true,  // Show progress bar
-        closeOnClick: true,  
-        });
-      }
-    }, [user, allowedRoles]);
+    // useEffect(() => {
+    //   if (user && !allowedRoles.includes(user.role)) {
+    //     toast.info("Become an Entrepreneur to access this feature", {
+    //         position: "top-center",  // Customize the position for this toast
+    //     autoClose: 5000,         // Auto close after 5 seconds
+    //     pauseOnHover: true,  // Show progress bar
+    //     closeOnClick: true,  
+    //     });
+    //   }
+    // }, [user, allowedRoles]);
   
     if (!user) {
       // Redirect if user data is not available

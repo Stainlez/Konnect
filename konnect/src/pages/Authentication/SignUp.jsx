@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, Form, useActionData, useNavigation } from "react-router-dom";
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import signimg from "../../assets/Signimg.png";
-
+import back from "../../assets/back.png"
 
 const SignUp = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -20,16 +20,16 @@ const SignUp = () => {
           <section className="flex relative container max-w-full">
             <Link
             to="/welcome"
-            className="back-button mt-11 flex font-bold text-white md:mt-20 md:ml-20" 
+            className="back-button ml-2 mt-4 flex font-bold text-white md:mt-20 md:ml-20" 
           >
-            &larr; <span className='text-sm pl-1 pt-1'> Back</span>
+             &larr; <span className='text-sm pl-1 pt-1'> Back</span>
           </Link>
 {/* flex container */}
 <div className="container m-auto flex flex-col w-screen md:w-7/12 items-center">
       <Form
         method="post"
         replace
-        className="max-w-md mt-40 md:mt-40 flex-col space-y-7 p-4 md:space-y-9"
+        className="max-w-md mt-24 md:mt-24 flex-col space-y-7 p-4 md:space-y-9"
       >
         {/* Display error message */}
         {actionData?.error && (
@@ -40,21 +40,21 @@ const SignUp = () => {
           type="text"
           name="firstname"
           placeholder="First Name"
-          className="w-full px-3 py-2 rounded"
+          className="w-full h-12 px-3 py-2 rounded"
           required
         />
         <input
           type="text"
           name="lastname"
           placeholder="Last Name"
-          className="w-full px-3 py-2 mt-8 rounded"
+          className="w-full h-12 px-3 py-2 mt-8 rounded"
           required
         />
         <input
           type="email"
           name="email"
           placeholder="Email"
-          className="w-full px-3 py-2 mt-8 rounded"
+          className="w-full h-12 px-3 py-2 mt-8 rounded"
           required
         />
 
@@ -64,7 +64,7 @@ const SignUp = () => {
             type={passwordVisible ? 'text' : 'password'}
             name="password"
             placeholder="Password"
-            className="w-full px-3 py-2 rounded"
+            className="w-full h-12 px-3 py-2 rounded"
             required
           />
           <div
@@ -81,7 +81,7 @@ const SignUp = () => {
             type={confirmPasswordVisible ? 'text' : 'password'}
             name="confirmPassword"
             placeholder="Confirm Password"
-            className="w-full px-3 py-2 rounded"
+            className="w-full h-12 px-3 py-2 rounded"
             required
           />
           <div
@@ -110,7 +110,7 @@ const SignUp = () => {
       )}
       </Form>
 
-      <div className="container mt-7 flex space-x-2 justify-center">
+      <div className="container flex space-x-2 justify-center">
         <p className="bg-purpleBg text-center text-textColor text-nowrap">
           ALREADY HAVE AN ACCOUNT?
         </p>

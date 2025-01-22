@@ -3,12 +3,13 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from "../pages/Host/Sidebar"
 import MobileSidebar from "../pages/Host/MobileSidebar"
 import { useState } from 'react';
-import {Link} from "react-router-dom"
+import {Link, useLoaderData} from "react-router-dom"
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const HostLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
+ const user  = useLoaderData();
+ console.log(user)
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
@@ -20,10 +21,10 @@ const HostLayout = () => {
   return (
     <div className="flex font-montserrat relative">
       {/* Mobile Sidebar */}
-        <MobileSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <MobileSidebar user={user} isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         
       {/* Desktop Sidebar (Always visible on larger screens) */}
-      <Sidebar />
+      <Sidebar user={user}/>
 
       {/* Overlay for Mobile Sidebar */}
       {isSidebarOpen && (

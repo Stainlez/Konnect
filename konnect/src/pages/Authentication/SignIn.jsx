@@ -20,18 +20,18 @@ function SignIn() {
     <div className="h-screen font-montserrat flex relative justify-between bg-textColor">
       <Link
         to="/welcome"
-        className="back-button flex font-bold mt-11 md:mt-20 md:ml-20" 
+        className="back-button ml-2 flex font-bold mt-11 md:mt-20 md:ml-20" 
       >
         &larr; <span className='text-sm pl-1 pt-1'> Back</span>
       </Link>
 
       {/* Form Section */}
-      <div className="max-w-7xl w-full md:w-7/12 p-3 m-auto">
+      <div className="max-w-7xl w-full md:w-7/12 p-5 md:p-16 m-auto">
       <Form
         method="post"
         replace
         action="/login" // Ensure this matches your route definition
-        className="max-w-md flex-col p-3 mt-20 m-auto"
+        className="md:w-12/12 flex-col p-3 mt-20 m-auto"
       >
         {/* Message from loader */}
         {message && (
@@ -51,7 +51,7 @@ function SignIn() {
             type="email"
             name="email"
             placeholder="Email"
-            className="w-full px-3 bg-white py-2 mt-8 rounded"
+            className="w-full px-3 h-12 bg-white py-2 mt-8 rounded"
             required
           />
         </div>
@@ -62,7 +62,7 @@ function SignIn() {
             type={passwordVisible ? "text" : "password"}
             name="password"
             placeholder="Password"
-            className="w-full px-3 py-2 mt-8 pr-10 rounded"
+            className="w-full px-3 h-12 py-2 mt-8 pr-10 rounded"
             required
           />
           <button

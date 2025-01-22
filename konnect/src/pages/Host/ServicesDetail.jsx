@@ -5,6 +5,7 @@ import tag from "../../assets/Tag.png"
 import stop from "../../assets/stop.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import back from "../../assets/back.png"
 
 const ServiceDetails = () => {
   const service = useLoaderData(); // Fetch data from the loader
@@ -29,8 +30,8 @@ const ServiceDetails = () => {
       <Link
                 to={`..${search}`}
                 relative="path"
-                className=""
-            >&larr; <span>Back to {type}</span></Link>
+                className="flex"
+            ><img src={back} alt="" className="w-5 h-3 self-center" /> <span>Back to {type}</span></Link>
       {/* Service Images */}
     <div className="flex p-1 justify-center space-x-2 md:space-x-10">
       {service.imageUrl && service.imageUrl.map((image, index) => (

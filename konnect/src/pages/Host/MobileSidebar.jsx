@@ -45,7 +45,7 @@ const MobileSidebar = ({ isOpen, toggleSidebar, user }) => {
       </div>
 
       <nav className="space-y-2">
-        {user.role === "user" ? (
+        {user.role === "User" ? (
           <NavLink
             to="."
             end

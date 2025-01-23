@@ -25,6 +25,7 @@ import commentavatar3 from "./assets/commentavatar3.png";
 import commentavatar4 from "./assets/commentavatar4.png";
 import commentavatar5 from "./assets/commentavatar5.png";
 import commentavatar6 from "./assets/commentavatar6.png";
+import logo from "./assets/logo2.jpg"
 
 export const servicesData = [
   {
@@ -595,6 +596,29 @@ export const userData = [
         date: "4 Dec 2024",
       },
     ],
+    notifications:  [
+      {id: 1,
+    title: "Welcome to Konnect!",
+    description: "We’re delighted you chose our platform for your entrepreneurial services.",
+    date: "30 January 2025",
+    icon: logo,
+  },
+  {
+    id: 2,
+    title: "Feature Update",
+    description: "Check out the new dashboard for insights.",
+    date: "30 January 2025",
+    icon: logo,
+  },
+],
+announcements:  [
+  {id: 1,
+    title: "Book Today for a 20% discount",
+    description: "Hire an entrepreneur or book a service for a 20% discount per job/service.",
+    date: "30 January 2025",
+    icon: logo,
+  },
+],
   },
 
   {

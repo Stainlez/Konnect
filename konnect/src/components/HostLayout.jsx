@@ -3,8 +3,9 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../pages/Host/Sidebar";
 import MobileSidebar from "../pages/Host/MobileSidebar";
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import message from "../assets/dashmessageIcon.png"
 
 const HostLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -70,10 +71,12 @@ const HostLayout = () => {
 
           <div className="flex space-x-2">
             <div className="relative flex items-center justify-center w-8 h-8 bg-gray-300 rounded-full cursor-pointer">
-              <span className="text-lg">🔔</span>
-              <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2">
-                3
-              </span>
+              <NavLink to="/dashboard/notification">
+                <span className="text-lg">🔔</span>
+                <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2">
+                  3
+                </span>
+              </NavLink>
             </div>
             <div className="w-8 h-8 rounded-full overflow-hidden cursor-pointer">
               <Link to="/dashboard/profile">
@@ -84,6 +87,15 @@ const HostLayout = () => {
                 />
               </Link>
             </div>
+            <div className="w-6 h-6 self-center rounded-md  overflow-hidden cursor-pointer">
+                      <Link to="#">
+                        <img
+                          src={message}
+                          alt="message"
+                          className="w-full h-full object-cover"
+                        />
+                      </Link>
+             </div>
           </div>
         </div>
 

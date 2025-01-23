@@ -41,7 +41,7 @@ const DesktopSidebar = ({ user }) => {
         />
       </div>
       <nav className="space-y-2">
-        {user.role === "user" ? (
+        {user.role === "User" ? (
           <NavLink
             to="."
             end

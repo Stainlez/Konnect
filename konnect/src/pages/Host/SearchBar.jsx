@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import message from "../../assets/dashmessageIcon.png";
 
@@ -25,12 +25,12 @@ const SearchBar = () => {
       <div className="flex gap-4">
         {/* Notification Icon */}
         <div className="relative flex items-center justify-center w-8 h-8 bg-gray-300 rounded-full cursor-pointer">
-          <Link to="/dashboard/notification">
+          <NavLink to="/dashboard/notification">
             <span className="text-lg">🔔</span>
             <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2">
               2
             </span>
-          </Link>
+          </NavLink>
         </div>
 
         {/* Avatar Icon */}

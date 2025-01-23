@@ -123,18 +123,7 @@ const router = createBrowserRouter(
           loader={userLoader}
         />
 
-        <Route
-          path="notification"
-          element={<NotificationPage />}
-          loader={userLoader}
-          errorElement={<Error />}
-        />
-        <Route
-          path="notification/announcement"
-          element={<AnnouncementTab />}
-          loader={userLoader}
-          errorElement={<Error />}
-        />
+
         <Route
           path="settings/account-type"
           element={<Accounttype />}
@@ -155,6 +144,19 @@ const router = createBrowserRouter(
         action={signupAction}
         errorElement={<Error />}
       />
+      <Route
+          path="/dashboard/notification"
+          element={<NotificationPage />}
+          loader={userLoader}
+          errorElement={<Error />}
+      >
+          <Route
+            path="announcement"
+            element={<AnnouncementTab />}
+            loader={userLoader}
+            errorElement={<Error />}
+          />
+      </Route>
       <Route path="registerentrepreneur" element={<SignUp2 />} />
       <Route path="resetpassword" element={<ResetPassword />} />
       <Route path="checkmail" element={<CheckMail />} />

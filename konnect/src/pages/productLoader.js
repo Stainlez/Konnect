@@ -1,4 +1,4 @@
-import { getAllData } from "../api";
+import { getAllData, geteducationalResources } from "../api";
 import { requireAuth } from "./Authentication/utility";
 import { redirect } from "react-router-dom";
 // import axios from "axios";
@@ -27,6 +27,15 @@ export async function serviceloader() {
 
   // Optionally return the vans data if needed elsewhere
   return services;
+}
+
+export async function educationLoader() {
+  // await requireAuth(request)
+  // Fetch the data
+  const education = await geteducationalResources();
+
+  // Optionally return the vans data if needed elsewhere
+  return education;
 }
 
 export async function serviceDetailLoader({ params, request }) {

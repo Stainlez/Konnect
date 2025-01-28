@@ -22,6 +22,7 @@ import CheckMail from "./pages/Authentication/CheckMail";
 import CreateNewPassword from "./pages/Authentication/CreateNewPassword";
 import Layout from "./components/Layout";
 import GeneralLayout from "./components/GeneralLayout";
+import EducationalContent from "./components/education";
 import NotFound from "./pages/NotFound";
 import Error from "./pages/Error";
 
@@ -30,6 +31,7 @@ import EntrepDashboard from "./pages/Entrepreneur/EntrepDashboard";
 import Profile from "./pages/Host/Profile";
 import Services from "./pages/Host/Services";
 import ServicesDetails from "./pages/Host/ServicesDetail";
+import { educationLoader as educationLoader } from "./pages/productLoader";
 import { loader as servicesLoader } from "./pages/productLoader";
 import { userLoader as userLoader } from "./pages/Host/UserData";
 import { serviceloader as serviceLoader } from "./pages/productLoader";
@@ -71,6 +73,12 @@ const router = createBrowserRouter(
           errorElement={<Error />}
           loader={servicesDetailLoader}
         />
+         <Route 
+          path="academy" 
+          element={<EducationalContent />} 
+          errorElement={<Error />}
+          loader={educationLoader}
+          />
         <Route path="contact" element={<Contact />} />
         <Route path="welcome" element={<Welcome />} />
       </Route>

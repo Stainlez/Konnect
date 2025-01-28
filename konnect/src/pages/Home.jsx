@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import img from "../assets/Home1.jpeg";
-import { NavLink } from "react-router-dom";
+import img from "../assets/Home1.png";
+import { Link, NavLink } from "react-router-dom";
 
 const Home = () => {
   const words = ["faster", "with ease", "efficiently"];
@@ -37,8 +37,8 @@ const Home = () => {
           </NavLink>
         </div>
       </div>
-      <div className="h-1/5 overflow-hidden">
-        <img src={img} alt="hands" className="h-full max-w-full" />
+      <div className="h-1/5 overflow-hidden min-w-screen">
+        <img src={img} alt="hands" className="h-full w-full object-fill" />
       </div>
 
       <section className=" relative container bg-purple-900 max-w-full">
@@ -60,7 +60,7 @@ const Home = () => {
             <hr className="ml-3 border-0 h-0.5 bg-white" />
             <p className="bg-purple-900">SOLVE PROBLEMS</p>
             <hr className="ml-3 border-0 h-0.5 bg-white" />
-            <p className="bg-purple-900">EDUCATIONAL RESOURCES</p>
+            <p className="bg-purple-900"> <Link to="/academy" >EDUCATIONAL RESOURCES</Link></p>
             <hr className="ml-3 border-0 h-0.5 bg-white" />
           </div>
         </div>

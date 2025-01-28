@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import signimg from "../../assets/Signimg.png";
+import back from "../../assets/back.png"
 
 function SignIn() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -23,7 +24,7 @@ function SignIn() {
         to="/welcome"
         className="back-button ml-2 flex font-bold mt-11 md:mt-20 md:ml-20"
       >
-        &larr; <span className="text-sm pl-1 pt-1"> Back</span>
+         <img src={back} alt="Back" className="w-7 h-5 mt-1" /> <span className="text-sm pl-1 pt-1"> Back</span>
       </Link>
 
       {/* Form Section */}

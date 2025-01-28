@@ -68,7 +68,12 @@ const ServiceDetails = () => {
               {service.location}
             </div>
 
-            <a
+            <Link to="/dashboard/chat"
+              className="bg-purple-600 text-center block w-2/7 md:w-1/5  text-textColor py-2 rounded-lg hover:bg-purple-700"
+            >
+              Message
+            </Link>
+            {/* <a
               href={`https://wa.me/${service.contact}?text=${encodeURIComponent(
                 message
               )}`}
@@ -81,7 +86,7 @@ const ServiceDetails = () => {
                 style={{ marginRight: "8px" }}
               />
               Message
-            </a>
+            </a> */}
             {/* Message Button */}
             {/* <button className="bg-purple-600 block text-textColor px-12 py-2 rounded-lg hover:bg-purple-700">
                   MESSAGE

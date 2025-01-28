@@ -52,11 +52,11 @@ const LandingPage = () => {
           <h1 className="pt-5 text-center text-2xl md:text-3xl lg:text-4xl font-extrabold">
             Explore our services
           </h1>
-          <p className="text-center">
+          {/* <p className="text-center">
             We offer a platform where clients can access a wide range of
             services provided by student entrepreneurs <br /> looking to expand
             their business and gain practical experience.
-          </p>
+          </p> */}
         </div>
 
         <SlideshowLandingPage />

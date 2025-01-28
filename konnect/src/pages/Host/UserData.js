@@ -18,11 +18,11 @@ export async function userLoader({ request }) {
 
   // Fetch all user data
   const usersData = await getUserData();
-  // console.log(usersData);
+  console.log(usersData);
 
   // Find the specific user by ID
   const user = usersData.find((user) => user.id === userId);
-  // console.log(user);
+  console.log(user); 
   if (!user) {
     throw new Error("User not found");
   }

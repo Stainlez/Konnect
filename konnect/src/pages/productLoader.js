@@ -1,6 +1,7 @@
 import { getAllData } from "../api";
 import { requireAuth } from "./Authentication/utility";
 import { redirect } from "react-router-dom";
+// import axios from "axios";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -114,6 +115,52 @@ export async function action({ request }) {
   }
 }
 
+// export async function action({ request }) {
+//   const formData = await request.formData();
+//   const firstname = formData.get("firstname");
+//   const lastname = formData.get("lastname");
+//   const email = formData.get("email");
+//   const password = formData.get("password");
+//   const confirmPassword = formData.get("confirmPassword");
+
+  // Basic validation
+  // if (password !== confirmPassword) {
+  //   return { error: "Passwords do not match!" };
+  // }
+
+  // Check for UNN email
+//   if (!email.endsWith("@unn.edu.ng")) {
+//     return {
+//       error: "Sign Up requires a UNN email (e.g Mbagwu.Chiemerie.123456@unn.edu.ng).",
+//     };
+//   }
+
+//   try {
+//     // Axios POST request to the backend
+//     const response = await axios.post("https://techkrontech.com/api/register",
+//       {
+      
+//       firstname: firstname,
+//       lastname: lastname, 
+//       email: email,
+//       password: password,
+//       password_confirmation: confirmPassword,
+//     });
+//     console.log(response)
+//     // Handle successful signup
+//     return redirect(
+//       "/login?message=Please check your email for a verification link before logging in."
+//     );
+//   } catch (error) {
+//     // console.error("Signup error:", error.response?.data || error.message);
+//     console.log(error)
+//     // return null
+//     return { error: error.response?.data?.message || "Signup failed. Please try again." };
+//   }
+// }
+
+
+
 // Action function to handle sign-in
 export async function signinAction({ request }) {
   const formData = await request.formData();
@@ -147,3 +194,38 @@ export async function signinAction({ request }) {
     return { error: error.message };
   }
 }
+
+// export async function signinAction({ request }) {
+//   const formData = await request.formData();
+//   const email = formData.get("email");
+//   const password = formData.get("password");
+//   const pathname =
+//     new URL(request.url).searchParams.get("redirectTo") || "/dashboard";
+
+//   try {
+//     // Make a POST request to the login endpoint
+//     const response = await axios.post("https://techkrontech.com/api/login", {
+//         email: email,
+//         password: password,
+//     });
+
+    // Handle the response
+    // if (!response.ok) {
+    //   const errorData = await response.json();
+    //   throw new Error(errorData.message || "Failed to sign in.");
+    // }
+
+    // const responseData = await response;
+    // console.log(response)
+    // Ensure user email is verified
+    // if (!response.user.email_verified_at) {
+    //   return { error: "Please verify your email before signing in." };
+    // }
+
+    // Redirect to the dashboard
+//     return redirect(pathname);
+//   } catch (error) {
+//     console.error("Error during sign-in:", error);
+//     return { error: error.message };
+//   }
+// }

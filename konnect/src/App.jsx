@@ -39,6 +39,8 @@ import { signinAction as loginAction } from "./pages/productLoader";
 import { messageLoader as loginMessageLoader } from "./pages/productLoader";
 // import History from "./pages/Host/History"
 import Settings from "./pages/Host/Settings";
+import ChatPage from "./pages/Host/chat";
+import PaymentDetails from "./pages/Host/pay";
 import NotificationPage from "./pages/Host/NotificationPage";
 import AnnouncementTab from "./pages/Host/AnnouncementTab";
 import Accounttype from "./pages/Host/Accounttype";
@@ -114,6 +116,8 @@ const router = createBrowserRouter(
           loader={servicesDetailLoader}
         />
 
+
+
         {/* <Route path="history" element={<History />} /> */}
         <Route
           path="settings"
@@ -157,6 +161,21 @@ const router = createBrowserRouter(
             errorElement={<Error />}
           />
       </Route>
+
+      <Route
+          path="/dashboard/chat"
+          element={<ChatPage />}
+          errorElement={<Error />}
+          loader={userLoader}
+        />
+
+        <Route
+          path="/dashboard/pay"
+          element={<PaymentDetails />}
+          errorElement={<Error />}
+          loader={userLoader}
+        />
+
       <Route path="registerentrepreneur" element={<SignUp2 />} />
       <Route path="resetpassword" element={<ResetPassword />} />
       <Route path="checkmail" element={<CheckMail />} />

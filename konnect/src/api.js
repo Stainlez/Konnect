@@ -12,6 +12,7 @@ export async function getAllData() {
 export async function getUserData() {
   // console.log(userData)
   return userData;
+  
 }
 
 // Function to fetch user data

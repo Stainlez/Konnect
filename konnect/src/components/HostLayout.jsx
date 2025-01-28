@@ -88,7 +88,7 @@ const HostLayout = () => {
               </Link>
             </div>
             <div className="w-6 h-6 self-center rounded-md  overflow-hidden cursor-pointer">
-                      <Link to="#">
+            <Link to="/dashboard/chat">
                         <img
                           src={message}
                           alt="message"

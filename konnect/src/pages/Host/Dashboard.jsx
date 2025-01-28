@@ -92,11 +92,11 @@ const Dashboard = () => {
       </div>
 
       {/* Konnect Analytics */}
-      <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
+      {/* <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
         <h2 className="text-lg font-bold mb-4">Konnect Analytics</h2>
-        {/* Placeholder for analytics chart */}
+        {/* Placeholder for analytics chart 
         <div className="h-32 bg-gradient-to-r from-green-400 to-blue-400 rounded-lg"></div>
-      </div>
+      </div> */}
 
       {/* Recent History and Progress */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">

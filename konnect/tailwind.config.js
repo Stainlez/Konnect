@@ -23,7 +23,12 @@ export default {
         yellow: 'hsla(54, 91%, 48%, 1)',
         highlight: '#00C2AA',
         customGray: '#D9D9D9',
+        chatblack: '#090808',
         purpleBg: '#5B309C',
+        paleOrange: '#CC831C',
+        paleBlue: '#120DA1',
+        paleGreen: '#45D421',
+        palepink: '#AE0F74',
         customImage: "url(../assets/bgrectangle.png')",
       },
       backgroundImage: {

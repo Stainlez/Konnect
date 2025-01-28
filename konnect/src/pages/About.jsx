@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useState, useEffect } from "react";
 import Bubu from "../assets/Bubu.jpg";
-import jasmine from "../assets/Jasmine.jpg";
+import jasmine from "../assets/jasmine.jpg";
 import mabel from "../assets/Mabel.jpg";
 
 const About = () => {
@@ -56,7 +56,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="h-1/5 overflow-hidden">
+      <div className="h-1/5 overflow-hidden min-w-screen">
         <img src={img} alt="hands" className="h-full w-full object-fill" />
       </div>
 

@@ -52,7 +52,7 @@ const Services = () => {
         key={service.id}
         className="justify-items-center rounded-lg overflow-hidden mb-7"
       >
-        <div className="flex ml-auto space-x-4 mb-3">
+        <div className="flex mr-auto space-x-4 mb-3">
           <img
             src={service.avatar}
             alt={service.product}
@@ -77,7 +77,7 @@ const Services = () => {
             className="h-52 w-60 md:w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
           />
         </div>
-        <div className="pt-3 ml-auto">
+        <div className="pt-3 mr-auto w-full">
           <div className="inline-flex items-center text-gray-600 border border-gray-400 px-3 py-1">
             <img src={tag} alt="tag" className="h-3 object-contain mr-2" />
             {service.category}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, Form, useActionData, useNavigation } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import signimg from "../../assets/Signimg.png";
-import back from "../../assets/back.png";
+// import back from "../../assets/back.png";
 
 const SignUp = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -19,12 +19,12 @@ const SignUp = () => {
   return (
     <div className="bg-purpleBg font-montserrat min-h-screen max-w-full">
       <section className="flex relative container max-w-full">
-        <Link
+        {/* <Link
           to="/welcome"
           className="back-button ml-2 mt-4 flex font-bold text-white md:mt-20 md:ml-20"
         >
             <span className="text-sm pl-1 pt-1"> Back</span>
-        </Link>
+        </Link> */}
         {/* <img src={back} alt="Back" className="w-7 h-5 mt-1" /> */}
         {/* flex container */}
         <div className="container m-auto flex flex-col w-screen md:w-7/12 items-center">
